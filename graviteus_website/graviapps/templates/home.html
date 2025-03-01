@@ -9,63 +9,64 @@
     <script src="{% static 'js/script.js' %}" defer></script>
 </head>
 <body>
-    <header class="federation">
-        <h1>GRAVITEUS</h1>
-        <nav>
-            <a href="#">Скачать игру</a>
-            <a href="#">О нас</a>
-        </nav>
-    </header>
+    <!-- Кнопка "О нас" -->
+    <button class="about-btn">О нас</button>
 
-    <main>
-        <!-- Федерация: Пропаганда -->
-        <section class="propaganda">
-            <h1 id="propaganda-text">СЛУЖИ ФЛОТУ! ПОДПИШИ КОНТРАКТ!</h1>
+    <!-- Герой-секция -->
+    <div class="hero-section">
+        <img src="{% static 'images/demo-screen6.jpg' %}" class="hero-image" alt="Главное изображение">
+        <h1 class="title">Graviteus</h1>
+        <button class="download-btn">Скачать</button>
+    </div>
+
+    <!-- Федерация: Галерея скриншотов -->
+    <div class="content-section">
+        <div class="image-pair">
+            <img src="{% static 'images/demo-screen1.jpg' %}" class="content-image" alt="Скриншот 1">
+            <img src="{% static 'images/demo-screen2.jpg' %}" class="content-image" alt="Скриншот 2">
+        </div>
+        <div class="text-block">
+            <h2>СЛУЖИ ФЛОТУ! ПОДПИШИ КОНТРАКТ!</h2>
             <p>Стань частью великого завоевания и расширения границ Федерации.</p>
-        </section>
+        </div>
+    </div>
 
-        <!-- Федерация: Галерея скриншотов (6 изображений) -->
-        <section class="gallery federation">
-            <div class="grid-container">
-                <img src="{% static 'images/demo-screen1.jpg' %}" alt="Скриншот Федерации 1">
-                <img src="{% static 'images/demo-screen2.jpg' %}" alt="Скриншот Федерации 2">
-                <img src="{% static 'images/demo-screen3.jpg' %}" alt="Скриншот Федерации 3">
-                <img src="{% static 'images/demo-screen4.jpg' %}" alt="Скриншот Федерации 4">
-                <img src="{% static 'images/demo-screen5.jpg' %}" alt="Скриншот Федерации 5">
-                <img src="{% static 'images/demo-screen6.jpg' %}" alt="Скриншот Федерации 6">
-            </div>
-        </section>
+    <!-- Слайдер изображений -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="{% static 'images/demo-screen3.jpg' %}" class="content-image" alt="Слайд 1"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen4.jpg' %}" class="content-image" alt="Слайд 2"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen5.jpg' %}" class="content-image" alt="Слайд 3"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen6.jpg' %}" class="content-image" alt="Слайд 4"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen1.jpg' %}" class="content-image" alt="Слайд 5"></div>
+        </div>
+        <button class="nav-btn prev">❮</button>
+        <button class="nav-btn next">❯</button>
+    </div>
 
-        <!-- Переходная зона -->
-        <section class="transition">
-            <h2>Но правда может быть другой...</h2>
-        </section>
+    <!-- Переходная зона -->
+    <section class="transition">
+        <h2>Но правда может быть другой...</h2>
+    </section>
 
-        <!-- Сопротивление: Появляется при прокрутке вниз -->
-        <section class="resistance hidden">
-            <h1 id="resistance-text">НЕ ВЕРЬ ЛЖИ! БЕГИ, ПОКА МОЖЕШЬ!</h1>
+    <!-- Сопротивление: Галерея -->
+    <div class="content-section">
+        <div class="image-pair">
+            <img src="{% static 'images/resist-screen1.jpg' %}" class="content-image" alt="Сопротивление 1">
+            <img src="{% static 'images/resist-screen2.jpg' %}" class="content-image" alt="Сопротивление 2">
+            <img src="{% static 'images/resist-screen3.jpg' %}" class="content-image" alt="Сопротивление 3">
+            <img src="{% static 'images/resist-screen4.jpg' %}" class="content-image" alt="Сопротивление 4">
+        </div>
+        <div class="text-block">
+            <h2>НЕ ВЕРЬ ЛЖИ! БЕГИ, ПОКА МОЖЕШЬ!</h2>
             <p>Сопротивление ведет борьбу за правду. Федерация — это ложь!</p>
-        </section>
+        </div>
+    </div>
 
-        <!-- Сопротивление: Галерея скриншотов (4 изображения) -->
-        <section class="gallery resistance">
-            <div class="grid-container">
-                <img src="{% static 'images/resist-screen1.jpg' %}" alt="Скриншот Сопротивления 1">
-                <img src="{% static 'images/resist-screen2.jpg' %}" alt="Скриншот Сопротивления 2">
-                <img src="{% static 'images/resist-screen3.jpg' %}" alt="Скриншот Сопротивления 3">
-                <img src="{% static 'images/resist-screen4.jpg' %}" alt="Скриншот Сопротивления 4">
-            </div>
-        </section>
-
-        <!-- Сопротивление: Призыв -->
-        <section class="resistance hidden">
-            <h2>Вставай на сторону свободы!</h2>
-            <p>Федерация контролирует информацию. Мы покажем тебе правду.</p>
-        </section>
-    </main>
-
+    <!-- Подвал -->
     <footer>
         <button class="download-btn">🚀 Скачать игру</button>
+        <p>© 2025 Graviteus Project. Все права защищены.</p>
     </footer>
 </body>
 </html>

@@ -1,18 +1,78 @@
-document.addEventListener("scroll", function() {
-    let scrollPosition = window.scrollY;
-    let maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    let scrollPercent = scrollPosition / maxScroll;
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const btnPrev = document.querySelector('.prev');
+const btnNext = document.querySelector('.next');
 
-    // Вычисляем цвета для градиента
-    let r1 = Math.round(0 + (255 * scrollPercent)); // от 0 до 255 (черный → красный)
-    let g1 = Math.round(31 - (31 * scrollPercent)); // от 31 до 0 (синий → черный)
-    let b1 = Math.round(63 - (63 * scrollPercent)); // от 63 до 0 (темно-синий → черный)
+let currentIndex = 1;
+let isAnimating = false;
+const totalSlides = slides.length;
 
-    let r2 = Math.round(0 + (120 * scrollPercent)); // от 0 до 120 (черный → оранжевый)
-    let g2 = Math.round(0 + (60 * scrollPercent)); // от 0 до 60 (черный → светло-красный)
-    let b2 = Math.round(0 - (0 * scrollPercent)); // от 0 до 0 (черный остается черным)
+function updateSlider() {
+    slider.style.transform = `translateX(-${currentIndex * 50}%)`;
+}
 
-    let newBackground = `linear-gradient(to bottom, rgb(${r1},${g1},${b1}), rgb(${r2},${g2},${b2}))`;
+function handleTransitionEnd() {
+    isAnimating = false;
 
-    document.body.style.background = newBackground;
+    if (currentIndex === 0) {
+        currentIndex = totalSlides - 2;
+        slider.style.transition = 'none';
+        updateSlider();
+        setTimeout(() => slider.style.transition = 'transform 0.5s ease-in-out');
+    } else if (currentIndex === totalSlides - 1) {
+        currentIndex = 1;
+        slider.style.transition = 'none';
+        updateSlider();
+        setTimeout(() => slider.style.transition = 'transform 0.5s ease-in-out');
+    }
+}
+
+btnNext.addEventListener('click', () => {
+    if (isAnimating) return;
+    isAnimating = true;
+    currentIndex++;
+    slider.style.transition = 'transform 0.5s ease-in-out';
+    updateSlider();
+});
+
+btnPrev.addEventListener('click', () => {
+    if (isAnimating) return;
+    isAnimating = true;
+    currentIndex--;
+    slider.style.transition = 'transform 0.5s ease-in-out';
+    updateSlider();
+});
+
+slider.addEventListener('transitionend', handleTransitionEnd);
+slider.style.transform = `translateX(-${currentIndex * 50}%)`;
+
+const body = document.body;
+const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+const colorStops = [
+    { pos: 0.0, color: [35, 40, 62] },
+    { pos: 0.5, color: [0, 0, 0] },
+    { pos: 1.0, color: [87, 41, 43] }
+];
+
+function interpolateColor(progress) {
+    for (let i = 1; i < colorStops.length; i++) {
+        if (progress <= colorStops[i].pos) {
+            const prev = colorStops[i - 1];
+            const next = colorStops[i];
+            const t = (progress - prev.pos) / (next.pos - prev.pos);
+
+            return [
+                Math.round(prev.color[0] + t * (next.color[0] - prev.color[0])),
+                Math.round(prev.color[1] + t * (next.color[1] - prev.color[1])),
+                Math.round(prev.color[2] + t * (next.color[2] - prev.color[2]))
+            ];
+        }
+    }
+    return colorStops[colorStops.length - 1].color;
+}
+
+window.addEventListener('scroll', () => {
+    const scrollProgress = window.pageYOffset / maxScroll;
+    const [r, g, b] = interpolateColor(scrollProgress);
+    body.style.backgroundColor = `rgb(${r},${g},${b})`;
 });

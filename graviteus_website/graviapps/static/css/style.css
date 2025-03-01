@@ -1,112 +1,142 @@
-/* --- Основные стили --- */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    transition: background 1s ease-in-out;
+    min-height: 100vh;
+    background: rgb(173, 216, 230);
+    transition: background 0.5s ease;
+    font-family: Arial, sans-serif;
 }
 
-/* --- Плавный переход фона от Федерации к Сопротивлению --- */
-body {
-    background: linear-gradient(to bottom, #001f3f, #ff4500);
-    color: white;
-}
-
-/* --- Заголовки --- */
-h1, h2 {
-    color: white;
-}
-
-/* --- Хедер --- */
-header {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
+.hero-section {
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 15px;
-    transition: 0.3s;
+.hero-image {
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
-nav a:hover {
-    color: #00c3ff;
+.title {
+    font-size: 48px;
+    margin: 20px 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* --- Вступительный блок --- */
-.intro {
-    padding: 50px 20px;
-    background: rgba(0, 0, 0, 0.6);
-}
-
-/* --- Блоки с галереей --- */
-.gallery {
-    padding: 50px 20px;
-}
-
-/* --- Федерация (верхняя часть) --- */
-.federation {
-    background: rgba(0, 31, 63, 0.7);
-    padding-top: 50px;
-}
-
-/* --- Переходный блок (между сторонами) --- */
-.transition {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 50px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-/* --- Сопротивление (нижняя часть) --- */
-.resistance {
-    background: rgba(255, 69, 0, 0.7);
-    padding-bottom: 50px;
-}
-
-/* --- Сетка изображений для Федерации и Сопротивления (2 в ряд) --- */
-.gallery .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 картинки в ряд */
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery .grid-container img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery .grid-container img:hover {
-    transform: scale(1.05);
-}
-
-/* --- Кнопка скачивания --- */
 .download-btn {
-    display: inline-block;
-    padding: 15px 30px;
+    padding: 15px 40px;
     font-size: 20px;
-    font-weight: bold;
+    background: #2196F3;
     color: white;
-    background: linear-gradient(45deg, #00c3ff, #008aff);
     border: none;
-    border-radius: 50px;
-    margin-top: 30px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0, 195, 255, 0.5);
+    transition: transform 0.3s;
 }
 
 .download-btn:hover {
-    background: linear-gradient(45deg, #008aff, #0059ff);
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.content-section {
+    padding: 80px 20%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.text-block {
+    flex: 1;
+    line-height: 1.6;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.image-pair {
+    flex: 1;
+    display: grid;
+    gap: 20px;
+}
+
+.content-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.content-image:hover {
+    transform: scale(1.05);
+}
+
+.slider-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.3);
+    border: none;
+    padding: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 32px;
+    color: white;
+    z-index: 10;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+footer {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+}
+
+.about-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 30px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
 }
