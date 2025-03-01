@@ -140,3 +140,15 @@ footer {
     cursor: pointer;
     backdrop-filter: blur(5px);
 }
+.enter-btn {
+    position: fixed;
+    top: 20px;
+    right: 432px;
+    padding: 10px 30px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
