@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graviteus</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <div class="header-buttons">
+        <div class="left-buttons">
+            {% if not user.is_authenticated %}
+                <a href="http://127.0.0.1:8000/SignUp/" class="auth-btn">Зарегистрироваться</a>
+                <a href="http://127.0.0.1:8000/LogIn/" class="auth-btn">Войти</a>
+            {% else %}
+                <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                   <button type="submit" class="auth-btn">Выйти</button>
+                </form>
+            {% endif %}
+        </div>
+
+
+    </div>
+    <!-- Кнопки "Магазин" и "О нас" -->
+    <div style="position: absolute; top: 10px; left: 10px;">
+        <a href="shop/"><button class="about-btn" style="margin-right: 10px; transform: translateX(-100px);">Скоро здесь будет магазин!</button></a>
+        <a href="{% url 'about' %}" id="about-btn" class="about-btn">О нас</a>
+        <a href = "{% url 'SignUp' %}"> Зарегестрироваться</a>
+        <a href = "{% url 'LogIn' %}"> Войти</a>
+    </div>
+    <!-- Герой-секция -->
+    <div class="hero-section">
+        <img src="{% static 'images/demo-screen6.jpg' %}" class="hero-image" alt="Главное изображение">
+        <h1 class="title">Graviteus</h1>
+        <button class="download-btn">Скачать</button>
+    </div>
+
+    <!-- Федерация: Галерея скриншотов -->
+    <div class="content-section">
+        <div class="image-pair">
+            <img src="{% static 'images/demo-screen1.jpg' %}" class="content-image" alt="Скриншот 1">
+            <img src="{% static 'images/demo-screen2.jpg' %}" class="content-image" alt="Скриншот 2">
+        </div>
+        <div class="text-block">
+            <h2>СЛУЖИ ФЛОТУ! ПОДПИШИ КОНТРАКТ!</h2>
+            <p>Стань частью великого завоевания и расширения границ Федерации.</p>
+        </div>
+    </div>
+
+    <!-- Слайдер изображений -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="{% static 'images/demo-screen3.jpg' %}" class="content-image" alt="Слайд 1"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen4.jpg' %}" class="content-image" alt="Слайд 2"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen5.jpg' %}" class="content-image" alt="Слайд 3"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen6.jpg' %}" class="content-image" alt="Слайд 4"></div>
+            <div class="slide"><img src="{% static 'images/demo-screen1.jpg' %}" class="content-image" alt="Слайд 5"></div>
+        </div>
+        <button class="nav-btn prev">❮</button>
+        <button class="nav-btn next">❯</button>
+    </div>
+
+    <!-- Переходная зона -->
+    <section class="transition">
+        <h2>Но правда может быть другой...</h2>
+    </section>
+
+    <!-- Сопротивление: Галерея -->
+    <div class="content-section">
+        <div class="image-pair">
+            <img src="{% static 'images/resist-screen1.jpg' %}" class="content-image" alt="Сопротивление 1">
+            <img src="{% static 'images/resist-screen2.jpg' %}" class="content-image" alt="Сопротивление 2">
+            <img src="{% static 'images/resist-screen3.jpg' %}" class="content-image" alt="Сопротивление 3">
+            <img src="{% static 'images/resist-screen4.jpg' %}" class="content-image" alt="Сопротивление 4">
+        </div>
+        <div class="text-block">
+            <h2>НЕ ВЕРЬ ЛЖИ! БЕГИ, ПОКА МОЖЕШЬ!</h2>
+            <p>Сопротивление ведет борьбу за правду. Федерация — это ложь!</p>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+        <button class="download-btn">🚀 Скачать игру</button>
+        <p>© 2025 Graviteus Project. Все права защищены.</p>
+    </footer>
+</body>
+</html>
