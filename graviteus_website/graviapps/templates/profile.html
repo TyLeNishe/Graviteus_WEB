@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+    <header class="federation">
+        <h1>GRAVITEUS</h1>
+    <div class="container">
+        <a href="/" class="back-button">На главную</a>
+
+        <div class="avatar-container">
+            <form method="POST" enctype="multipart/form-data" id="avatar-form">
+                {% csrf_token %}
+                <input type="file" name="avatar" id="avatar-input" accept="image/*" style="display: none;">
+                <img src="{{ user_profile.avatar.url }}" alt="Avatar" class="avatar" id="avatar">
+            </form>
+        </div>
+
+        <div class="profile-info">
+            <h2>{{ request.user.username }}</h2>
+        </div>
+        <div>
+            <h2>
+                Ваши данные
+            </h2>
+            <ul>
+                <li> Ваша принадлежность: </li>
+                <li> Ваш никнейм: </li>
+            </ul>
+        </div>
+        <div>
+            <button class="logout" onclick="window.location.href='/logout/'">Выйти из аккаунта</button>
+            <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                <input class="delete" type="submit" value="Удалить Аккаунт">
+                <input type="hidden" name="delete_button" value="delete">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('avatar').addEventListener('click', function () {
+            document.getElementById('avatar-input').click();
+        });
+
+        document.getElementById('avatar-input').addEventListener('change', function () {
+            document.getElementById('avatar-form').submit();
+        });
+    </script>
+</body>
+
+</html>
