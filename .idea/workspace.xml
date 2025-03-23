@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61a01936-7d18-45b9-b881-0fa4bf95c571" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/graviteus-new-main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/graviteus-new-main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "DegoEz"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TyLeNishe/Graviteus_WEB.git",
+    "accountId": "48b62eee-4ba8-4727-8f06-2567272b2cb9"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -30,6 +43,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "vcs.Git"
   }

@@ -14,3 +14,6 @@ class SignUpForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
     username = forms.CharField(label='Имя пользователя')
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput)
+
+    # Примечание: одна из ошибок запуска регистрации находится в этом файле.
+    # Предполагаю,что из-за разницы вводимых данных он не может перейти дальше. Надо пересмотреть

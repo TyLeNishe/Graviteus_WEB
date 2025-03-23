@@ -11,6 +11,7 @@
 <body>
     <header class="federation">
         <h1>GRAVITEUS</h1>
+    </header>
     <div class="container">
         <a href="/" class="back-button">На главную</a>
 
@@ -31,7 +32,8 @@
             </h2>
             <ul>
                 <li> Ваша принадлежность: </li>
-                <li> Ваш никнейм: </li>
+                <li> Ваш никнейм: {{ request.user.username }} </li>
+                <li> Ваша почта: </li>
             </ul>
         </div>
         <div>
