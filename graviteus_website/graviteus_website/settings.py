@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'graviapps',
 ]
 
@@ -44,6 +45,7 @@ ROOT_URLCONF = 'graviteus_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
         'DIRS': [os.path.join(BASE_DIR, 'graviapps/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -112,3 +114,18 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'graviapps/static')]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+LOGIN_REDIRECT_URL = 'home'  # Куда перенаправлять после успешного входа
+LOGOUT_REDIRECT_URL = 'login'  # Куда перенаправлять после выхода
+
+
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)

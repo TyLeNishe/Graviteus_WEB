@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #2c254e;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgba(31, 31, 31, 0.8); 
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header-buttons.left {
+    margin-right: auto;
+}
+
+.header-buttons.right {
+    margin-left: auto;
+}
+
+.username {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.header-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #ff4444;
+    border-color: #ff4444;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+.auth-btn {
+    padding: 10px 30px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.content-wrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    margin: 120px auto 30px; 
+    max-width: 950px; 
+    padding: 30px;
+    padding-top: 40px;
+    width: calc(100%); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+.container {
+    padding: 0; 
+    margin: 0 auto; 
+    max-width: 100%; 
+
+}
+
+.profile-icon {
+    width: 225px;
+    height: 225px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.05);
+}
+
+.accordion-item {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: rgba(31, 31, 31, 0.7);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.accordion-header {
+    padding: 15px 25px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.accordion-content {
+    padding: 0 25px; 
+    max-height: 0; 
+    opacity: 0; 
+    overflow: hidden;
+    background-color: transparent;
+    border-top: 1px solid transparent; 
+    transition: 
+        max-height 0.5s ease,
+        padding 0.5s ease,
+        opacity 0.3s ease 0.1s,
+        border-top 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px; 
+    opacity: 1;
+    padding: 20px 25px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-item.active {
+    border-radius: 25px 25px 8px 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    font-size: 16px;
+    opacity: 0.7;
+    pointer-events: none;
+    user-select: none;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #bbb;
+}
+
+.info-value {
+    color: #fff;
+}
+
+.achievements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.achievement {
+    width: 120px;
+    height: 120px;
+    background-color: #444;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.achievement:hover {
+    transform: scale(1.05);
+}
+
+.achievement-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.achievement-container span {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 7.5px;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.modal-icon {
+    width: 180px;
+    height: 180px;
+    background-color: #444;
+    border-radius: 15px;
+    margin: 0 auto 30px;
+}
+
+.modal-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.modal-text {
+    font-size: 24px;
+    margin-bottom: 22.5px;
+}
+
+.modal-date {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 7.5px;
+}
+
+.modal-date span {
+    font-weight: normal;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.change-email {
+    color: #2196F3;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+.change-email:hover {
+    color: #0d8bf2;
+}
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.change-email-container {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.change-email {
+    color: #2196F3;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.change-email:hover {
+    color: #0d8bf2;
+}
+
+.email-input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.username-input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

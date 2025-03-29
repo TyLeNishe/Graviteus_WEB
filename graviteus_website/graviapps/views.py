@@ -1,11 +1,18 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, logout
 from django import forms
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.core.validators import validate_email
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+
+from .forms import CustomUserCreationForm
+
+
+
 
 from .forms import SignUpForm, LoginForm
 from .models import UserProfile
@@ -15,53 +22,64 @@ def home(request):
     return render(request, 'home.html')
 
 
-def Shop(request):
-    return render(request, "shop.html")
-
-def about(request):
-    return render(request, 'about.html')
-
-def SignUp(request):
+def register(request):
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('home')
     else:
-        form = SignUpForm()
-    return render(request, 'SignUp.html', {'form': form})
+        form = UserCreationForm()
+    return render(request, 'Register.html', {'form': form})
 
-
-def LogIn(request):
-    form = LoginForm(data=request.POST or None)
+def my_login(request):
     if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-    return render(request, 'LogIn.html', {'form': form})
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'Login.html', {'form': form})
 
+def avatar_view(request):
+    if request.user.is_authenticated and hasattr(request.user, 'userprofile') and request.user.userprofile.avatar:
+        profile = request.user.userprofile
+        return HttpResponse(profile.avatar, content_type=profile.avatar_content_type)
+    return HttpResponse(status=404)
+
+def shop(request):
+    return render(request, 'shop.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 @login_required
 def profile(request):
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
-
+    
+    is_google_user = request.user.social_auth.filter(provider='google-oauth2').exists()
+    
     if request.method == 'POST' and 'avatar' in request.FILES:
         avatar_file = request.FILES['avatar']
         user_profile.avatar = avatar_file.read()
         user_profile.avatar_content_type = avatar_file.content_type
         user_profile.save()
         return redirect('profile')
-
-    return render(request, 'Profile.html', {'user_profile': user_profile})
-
+    
+    return render(request, 'Profile.html', {
+        'user_profile': user_profile,
+        'is_google_user': is_google_user
+    })
 
 @login_required
 def update_email(request):
+    if request.user.social_auth.filter(provider='google-oauth2').exists():
+        messages.error(request, 'Изменение почты недоступно для аккаунтов Google.')
+        return redirect('profile')
+    
     if request.method == 'POST':
         new_email = request.POST.get('email')
         try:
@@ -77,12 +95,12 @@ def update_email(request):
 @login_required
 def update_username(request):
     if request.method == 'POST':
-        new_username = request.POST.get('username', '').strip()
-        if new_username:
-            if User.objects.filter(username=new_username).exists():
+        new_username = request.POST.get('username', '').strip() 
+        if new_username:  
+            if User.objects.filter(username=new_username).exists(): 
                 messages.error(request, 'Это имя пользователя уже занято.')
             else:
-                user = request.user
+                user = request.user 
                 user.username = new_username
                 user.save()
                 messages.success(request, 'Имя успешно изменено.')
@@ -90,13 +108,31 @@ def update_username(request):
             messages.error(request, 'Имя пользователя не может быть пустым.')
     return redirect('profile')
 
-
 def delete_account(request):
-    if request.method == 'POST':
+    if request.method == 'POST':  
         user = request.user
-        user.delete()
-        logout(request)
-        return redirect('home')
+        user.delete()  
+        logout(request) 
+        return redirect('home') 
     else:
         from django.http import HttpResponseNotAllowed
         return HttpResponseNotAllowed(['POST'])
+    
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            
+            user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password1']
+            )
+            
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'Register.html', {'form': form})

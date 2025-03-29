@@ -1,60 +1,185 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Profile</title>
+    <title>Профиль</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/script.js' %}" defer></script>
+    {% load custom_filters %}
+    <link rel="stylesheet" href="{% static 'css/style_profile.css' %}">
 </head>
-<body>
-    <header class="federation">
-        <h1>GRAVITEUS</h1>
-    </header>
-    <div class="container">
-        <a href="/" class="back-button">На главную</a>
 
-        <div class="avatar-container">
-            <form method="POST" enctype="multipart/form-data" id="avatar-form">
+<body style="background-image: url('{% static 'images/bgReg.png' %}')">
+    <div id="csrf-token" data-csrf="{{ csrf_token }}" style="display: none;"></div>
+    <div id="update-username-url" data-url="{% url 'update_username' %}" style="display: none;"></div>
+    <div id="update-email-url" data-url="{% url 'update_email' %}" style="display: none;"></div>
+
+    <div class="header">
+        <div class="header-buttons left">
+            <form action="{% url 'delete_account' %}" method="post" style="display: inline;">
                 {% csrf_token %}
-                <input type="file" name="avatar" id="avatar-input" accept="image/*" style="display: none;">
-                <img src="{{ user_profile.avatar.url }}" alt="Avatar" class="avatar" id="avatar">
+                <button type="submit" class="header-btn delete-btn">Удалить аккаунт</button>
+            </form>
+            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="auth-btn">Выйти</button>
             </form>
         </div>
 
-        <div class="profile-info">
-            <h2>{{ request.user.username }}</h2>
+        <div class="username">{{ request.user.username }}</div>
+
+        <div class="header-buttons right">
+            <a href="{% url 'home' %}" class="header-btn">На главную</a>
         </div>
-        <div>
-            <h2>
-                Ваши данные
-            </h2>
-            <ul>
-                <li> Ваша принадлежность: </li>
-                <li> Ваш никнейм: {{ request.user.username }} </li>
-                <li> Ваша почта: </li>
-            </ul>
-        </div>
-        <div>
-            <button class="logout" onclick="window.location.href='/logout/'">Выйти из аккаунта</button>
-            <form method="POST" style="display: inline;">
+    </div>
+    <div class="content-wrapper">
+        <div class="container">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="profile-icon" onclick="document.getElementById('avatar-input').click();">
+                {% if user_profile.avatar %}
+                <img id="avatar-preview"
+                    src="data:{{ user_profile.avatar_content_type }};base64,{{ user_profile.avatar | base64_encode }}"
+                    alt="" style="width: 100%; height: 100%; border-radius: 50%;">
+                {% else %}
+                <img id="avatar-preview" src="{% static 'images/default.png' %}" alt=""
+                    style="width: 100%; height: 100%; border-radius: 50%;">
+                {% endif %}
+            </div>
+            <form method="POST" enctype="multipart/form-data" id="avatar-form" style="display: none;">
                 {% csrf_token %}
-                <input class="delete" type="submit" value="Удалить Аккаунт">
-                <input type="hidden" name="delete_button" value="delete">
+                <input type="file" name="avatar" id="avatar-input" accept="image/*"
+                    onchange="handleAvatarChange(event)">
             </form>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Основная информация</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="info-row">
+                            <span class="info-label">Имя:</span>
+                            <span class="info-value" id="username-value">{{ request.user.username }}</span>
+                            <input type="text" id="username-input" style="display: none;" class="username-input">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Почта:</span>
+                            <span class="info-value" id="email-value">{{ request.user.email }}</span>
+                            <input type="email" id="email-input" style="display: none;" class="email-input">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Уровень:</span>
+                            <span class="info-value">10</span>
+                        </div>
+                        <div class="change-email-container">
+                            <span class="change-email" onclick="toggleUsernameEdit()">Изменить ник</span>
+                            {% if not is_google_user %}
+                            <span class="change-email" onclick="toggleEmailEdit()">Изменить почту</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Мои достижения</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="achievements-grid">
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №1', event)"></div>
+                                <span>Достижение №1</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №2', event)"></div>
+                                <span>Достижение №2</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №3', event)"></div>
+                                <span>Достижение №3</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №4', event)"></div>
+                                <span>Достижение №4</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №5', event)"></div>
+                                <span>Достижение №5</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №6', event)"></div>
+                                <span>Достижение №6</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №7', event)"></div>
+                                <span>Достижение №7</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №8', event)"></div>
+                                <span>Достижение №8</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №9', event)"></div>
+                                <span>Достижение №9</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №10', event)"></div>
+                                <span>Достижение №10</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №11', event)"></div>
+                                <span>Достижение №11</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №12', event)"></div>
+                                <span>Достижение №12</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №13', event)"></div>
+                                <span>Достижение №13</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №14', event)"></div>
+                                <span>Достижение №14</span>
+                            </div>
+                            <div class="achievement-container">
+                                <div class="achievement" onclick="openModal('Достижение №15', event)"></div>
+                                <span>Достижение №15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-icon"></div>
+            <div class="modal-title" id="modal-title">Достижение №1</div>
+            <p class="modal-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </p>
+            <div class="modal-date">
+                <strong>Дата получения:</strong> <span>1 янв. 2000 г. в 00:00</span>
+            </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('avatar').addEventListener('click', function () {
-            document.getElementById('avatar-input').click();
-        });
-
-        document.getElementById('avatar-input').addEventListener('change', function () {
-            document.getElementById('avatar-form').submit();
-        });
-    </script>
+    <script src="{% static 'js/script_profile.js' %}"></script>
 </body>
 
 </html>
