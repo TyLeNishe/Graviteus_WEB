@@ -1,8 +1,14 @@
+from dotenv import load_dotenv
 from pathlib import Path
 import os
 
+# Load environment variables
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Quick-start development settings - unsuitable for production
@@ -45,8 +51,10 @@ ROOT_URLCONF = 'graviteus_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
-        'DIRS': [os.path.join(BASE_DIR, 'graviapps/templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'graviapps/templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,10 +130,30 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = 'home'  # Куда перенаправлять после успешного входа
 LOGOUT_REDIRECT_URL = 'login'  # Куда перенаправлять после выхода
 
+# Вход через социальные сети
+# Для работы нужен файл .env, его нет в репозитории
 
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('GOOGLE_CLIENT_ID')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('GOOGLE_SECRET')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email', 'profile']
+SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS = {'access_type': 'offline'}
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = os.getenv('VK_APP_ID')   
+SOCIAL_AUTH_VK_OAUTH2_SECRET = os.getenv('VK_SECRET_KEY')
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
+SOCIAL_AUTH_VK_OAUTH2_REDIRECT_URI = 'http://localhost/social-auth/complete/vk-oauth2/'
+
+SOCIAL_AUTH_YANDEX_OAUTH2_KEY = os.getenv('YANDEX_CLIENT_ID')
+SOCIAL_AUTH_YANDEX_OAUTH2_SECRET = os.getenv('YANDEX_SECRET')
+SOCIAL_AUTH_YANDEX_OAUTH2_SCOPE = ['login:email', 'login:info']
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.vk.VKOAuth2', 
+    'social_core.backends.yandex.YandexOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )

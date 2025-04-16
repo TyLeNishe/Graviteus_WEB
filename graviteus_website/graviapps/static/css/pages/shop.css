@@ -1,0 +1,15 @@
+.shop-container {
+    padding: 80px 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .shop-title {
+    font-size: 3em;
+    margin-bottom: 40px;
+  }
+  
+  .coming-soon {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }

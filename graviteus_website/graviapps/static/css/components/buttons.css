@@ -1,0 +1,196 @@
+/* ===== БАЗОВЫЕ СТИЛИ КНОПОК ===== */
+.btn {
+  /* Обязательные свойства */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  backdrop-filter: blur(5px);
+  line-height: 1;
+  box-sizing: border-box;
+
+  /* Размеры по умолчанию */
+  padding: 8px 20px;
+  height: 36px;
+  font-size: 14px;
+}
+
+/* ===== ТИПЫ КНОПОК ===== */
+.btn-primary {
+  background-color: rgba(var(--primary-rgb), 0.9);
+  color: white;
+  border-color: rgba(var(--primary-rgb), 0.9);
+  height: 44px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-danger {
+  background-color: rgba(var(--error-rgb), 0.9);
+  color: white;
+  border-color: rgba(var(--error-rgb), 0.9);
+}
+
+/* ===== СОСТОЯНИЯ ===== */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== РАЗМЕРЫ ===== */
+.btn-sm {
+  padding: 6px 16px;
+  height: 32px;
+  font-size: 13px;
+}
+
+.btn-md {
+  padding: 12px 24px;
+  height: 44px;
+  font-size: 16px;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  height: 52px;
+  font-size: 18px;
+}
+
+/* ===== СПЕЦИАЛЬНЫЕ КНОПКИ ===== */
+.btn-avatar {
+  padding: 0;
+  min-width: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 42px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-avatar.btn-sm {
+  width: 36px;
+  height: 36px;
+}
+
+.btn-avatar.btn-md {
+  width: 42px;
+  height: 42px;
+}
+
+.btn-avatar.btn-lg {
+  width: 48px;
+  height: 48px;
+  border-width: 2.5px;
+}
+
+.btn-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.btn-avatar:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ КОМПОНЕНТЫ ===== */
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-height: 44px;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.btn-vk {
+  background-color: rgba(var(--vk-rgb), 0.9);
+}
+
+.btn-yandex {
+  background-color: rgba(var(--yandex-rgb), 0.9);
+  color: var(--dark);
+}
+
+.btn-google {
+  background-color: rgba(var(--google-rgb), 0.9);
+}
+
+.social-btn:hover {
+  transform: scale(1.02);
+}
+
+.btn-vk:hover {
+  background-color: rgba(var(--vk-rgb), 0.7);
+}
+
+.btn-yandex:hover {
+  background-color: rgba(var(--yandex-rgb), 0.7);
+}
+
+.btn-google:hover {
+  background-color: rgba(var(--google-rgb), 0.7);
+}
+
+.account-link {
+  color: var(--primary);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.account-link:hover {
+  background-color: rgba(var(--primary-rgb), 0.1);
+  text-decoration: underline;
+}
+
+.account-link:visited {
+  color: var(--primary);
+}
+
+/* Ссылка для изменения данных */
+.change-email {
+  color: var(--primary);
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: var(--space-sm);
+  transition: color 0.3s ease;
+}
+
+.change-email:hover {
+  color: var(--primary-hover);
+}
+
+.change-email-container {
+  text-align: right;
+  margin-top: var(--space-sm);
+}

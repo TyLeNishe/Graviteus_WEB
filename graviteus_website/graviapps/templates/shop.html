@@ -3,49 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазин</title>
+    <title>Магазин - Graviteus</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
     <style>
-        .shop-container {
-            padding: 80px 20px;
+        body {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
+                        url('{% static "images/bgReg.png" %}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: var(--light);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+            padding: 80px 20%;
             text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .shop-title {
             font-size: 3em;
             margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .coming-soon {
             font-size: 1.5em;
             margin-bottom: 30px;
         }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: var(--space-lg);
+            text-align: center;
+            color: var(--light-gray);
+        }
     </style>
 </head>
 <body>
-    <div class="header-buttons">
-        <div class="left-buttons">
-            <a href="{% url 'home' %}" class="auth-btn">Назад</a>
+    <header class="header">
+        <div class="header-nav">
+            <a href="{% url 'home' %}" class="btn btn-outline btn-sm">На главную</a>
         </div>
-
-        <div class="right-buttons">
+        <div class="header-nav">
             {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}" class="profile-icon-link">
-                    <img src="{% if user.userprofile.avatar %}data:{{ user.userprofile.avatar_content_type }};base64,{{ user.userprofile.get_avatar_base64 }}{% else %}{% static 'images/default.png' %}{% endif %}" alt="" class="profile-icon">
-                </a>
+            <a href="{% url 'profile' %}" class="btn btn-avatar btn-sm">
+                <img src="{% if user.userprofile.avatar %}data:{{ user.userprofile.avatar_content_type }};base64,{{ user.userprofile.get_avatar_base64 }}{% else %}{% static 'images/default.png' %}{% endif %}" alt="Профиль">
+            </a>
             {% endif %}
-            <a href="{% url 'about' %}" class="about-btn">О нас</a>
         </div>
-    </div>
+    </header>
 
-    <div class="shop-container">
+    <main>
         <h1 class="shop-title">Магазин Graviteus</h1>
         <p class="coming-soon">Скоро откроется!</p>
         <p>Здесь будут доступны эксклюзивные косметические предметы и улучшения для вашего корабля.</p>
-    </div>
+    </main>
 
     <footer>
         <p>© 2025 Graviteus Project. Все права защищены.</p>

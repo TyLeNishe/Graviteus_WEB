@@ -6,43 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graviteus</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/script.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/cards.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/hacker-bg.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/glitch-text.css' %}">
 </head>
 
 <body>
-    <!-- Шапка -->
-    <div class="header-buttons">
-        <div class="left-buttons">
+    <header class="header">
+        <nav class="header-nav">
             {% if not user.is_authenticated %}
-            <a href="{% url 'register' %}" class="auth-btn">Зарегистрироваться</a>
-            <a href="{% url 'login' %}" class="auth-btn">Войти</a>
+            <a href="{% url 'register' %}" class="btn btn-outline btn-sm">Зарегистрироваться</a>
+            <a href="{% url 'login' %}" class="btn btn-outline btn-sm">Войти</a>
             {% else %}
-            <a href="{% url 'shop' %}" class="auth-btn">Магазин</a>
+            <a href="{% url 'shop' %}" class="btn btn-outline btn-sm">Магазин</a>
             <form action="{% url 'logout' %}" method="post" style="display: inline;">
                 {% csrf_token %}
-                <button type="submit" class="auth-btn">Выйти</button>
+                <button type="submit" class="btn btn-outline btn-sm">Выйти</button>
             </form>
             {% endif %}
-        </div>
+        </nav>
 
-        <div class="right-buttons">
+        <div class="header-nav">
             {% if user.is_authenticated %}
-            <a href="{% url 'profile' %}" class="profile-icon-link">
+            <a href="{% url 'profile' %}" class="btn btn-avatar btn-sm">
                 <img src="{% if user.userprofile.avatar %}data:{{ user.userprofile.avatar_content_type }};base64,{{ user.userprofile.get_avatar_base64 }}{% else %}{% static 'images/default.png' %}{% endif %}"
-                    alt="" class="profile-icon">
+                    alt="Профиль" class="profile-icon">
             </a>
             {% endif %}
-            <a href="{% url 'about' %}" class="about-btn">О нас</a>
+            <a href="{% url 'about' %}" class="btn btn-outline btn-sm">О нас</a>
         </div>
-    </div>
-     <!-- Герой-секция -->
+    </header>
+
+    <!-- Герой-секция -->
     <div class="hero-section">
         <img src="{% static 'images/demo-screen6.jpg' %}" class="hero-image" alt="Главное изображение">
-        <h1 class="title">Graviteus</h1>
+        <h1 class="title glitch-text">Graviteus</h1>
         <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download>
-            <button class="download-btn">Скачать</button>
-          </a>
+            <button class="btn btn-primary btn-lg">Скачать</button>
+        </a>
     </div>
 
     <!-- Федерация: Галерея скриншотов -->
@@ -77,7 +84,7 @@
 
     <!-- Переходная зона -->
     <section class="transition">
-        <h2>Но правда может быть другой...</h2>
+        <h2 class="glitch-text">Но правда может быть другой...</h2>
     </section>
 
     <!-- Сопротивление: Галерея -->
@@ -93,14 +100,17 @@
             <p>Сопротивление ведет борьбу за правду. Федерация — это ложь!</p>
         </div>
     </div>
-
-    <!-- Подвал -->
     <footer>
-        <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download>
-            <button class="download-btn">🚀 Скачать игру</button>
-          </a>
+        <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download
+            class="btn btn-primary btn-lg">
+            🚀 Скачать игру
+        </a>
         <p>© 2025 Graviteus Project. Все права защищены.</p>
     </footer>
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <script src="{% static 'js/fun/hacker-bg.js' %}"></script>
+    <script src="{% static 'js/fun/glitch-text.js' %}"></script>
+    <script src="{% static 'js/script.js' %}" defer></script>
 </body>
 
 </html>

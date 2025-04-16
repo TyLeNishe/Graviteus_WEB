@@ -1,0 +1,38 @@
+/* components/header.css */
+.header {
+    /* Общие стили для всех шапок */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(31, 31, 31, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .header-nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Центральный элемент (для username) */
+  .header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }

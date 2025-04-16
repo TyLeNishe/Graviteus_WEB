@@ -5,9 +5,9 @@ from .views import my_login
 from .views import profile, home, update_email, update_username, delete_account
 from .views import update_email
 from . import views
-from django.conf import settings # type: ignore
-from django.conf.urls.static import static # type: ignore
-from django.contrib.auth import views as auth_views  # type: ignore
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', home, name='home'),

@@ -1,0 +1,26 @@
+.hacker-bg-layer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.hacker-bg-symbol {
+    position: absolute;
+    color: var(--hacker-bg-color);
+    font-family: monospace;
+    font-size: var(--hacker-bg-font-size);
+    animation: fall linear infinite;
+    user-select: none;
+}
+
+@keyframes fall {
+    from { top: -10%; }
+    to { top: 110%; }
+}

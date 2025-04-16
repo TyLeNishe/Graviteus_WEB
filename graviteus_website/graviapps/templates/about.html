@@ -5,14 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас - Graviteus</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/about.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <style>
+        body {
+            background: linear-gradient(rgba(122, 99, 99, 0.342), rgba(133, 118, 101, 0.295)),
+                        url('{% static "images/bgReg.png" %}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: var(--light);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+            padding: 80px 20%;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: var(--space-lg);
+            text-align: center;
+            color: var(--light-gray);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>О нас</h1>
+    <header class="header">
+        <div class="header-nav">
+            <a href="{% url 'home' %}" class="btn btn-outline btn-sm">На главную</a>
+        </div>
+        <div class="header-nav">
+            {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="btn btn-avatar btn-sm">
+                <img src="{% if user.userprofile.avatar %}data:{{ user.userprofile.avatar_content_type }};base64,{{ user.userprofile.get_avatar_base64 }}{% else %}{% static 'images/default.png' %}{% endif %}" alt="Профиль">
+            </a>
+            {% endif %}
+        </div>
     </header>
+
     <main>
+        <h1>О нас</h1>
         <p>Мы — команда разработчиков игры Graviteus. Наша цель — создать захватывающий игровой опыт.</p>
         <p>Мы — команда разработчиков игры Graviteus. Наша цель — создать захватывающий игровой опыт.</p>
         <p>Мы — команда разработчиков игры Graviteus. Наша цель — создать захватывающий игровой опыт.</p>
@@ -49,6 +90,7 @@
         <p>Мы — команда разработчиков игры Graviteus. Наша цель — создать захватывающий игровой опыт.</p>
         <p>Мы — команда разработчиков игры Graviteus. Наша цель — создать захватывающий игровой опыт.</p>
     </main>
+
     <footer>
         <p>© 2025 Graviteus Project. Все права защищены.</p>
     </footer>

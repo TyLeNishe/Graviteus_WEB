@@ -1,0 +1,220 @@
+/* Основной контейнер профиля */
+.profile-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  margin: 100px auto 30px;
+  max-width: 950px;
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+}
+
+.profile-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-lg);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Аккордеон */
+.accordion-item {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: var(--space-sm);
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: rgba(31, 31, 31, 0.7);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  max-height: 50px; /* Уменьшенная высота в свёрнутом состоянии */
+}
+
+.accordion-header {
+  padding: 12px 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  height: 50px; /* Фиксированная высота заголовка */
+}
+
+.accordion-content {
+  padding: 0 var(--space-lg);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.accordion-item.active {
+  max-height: 1000px;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1000px;
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Узкие поля ввода */
+.narrow-input {
+  width: 150px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  margin-left: 10px;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Информационные строки */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  font-size: 18px;
+}
+
+.info-label {
+  font-weight: bold;
+  color: var(--light-gray);
+}
+
+.info-value {
+  color: var(--light);
+}
+
+/* Достижения */
+.achievements-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.achievement {
+  width: 120px;
+  height: 120px;
+  background-color: #444;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.achievement:hover {
+  transform: scale(1.05);
+}
+
+.achievement-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+}
+
+.achievement-container span {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--dark);
+  padding: var(--space-lg);
+  border-radius: 15px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.modal-icon {
+  width: 180px;
+  height: 180px;
+  background-color: #444;
+  border-radius: 15px;
+  margin: 0 auto var(--space-lg);
+}
+
+.modal-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: var(--space-md);
+}
+
+.modal-text {
+  font-size: 18px;
+  margin-bottom: var(--space-lg);
+}
+
+.modal-date {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Сообщения */
+.messages {
+  margin-bottom: var(--space-md);
+}
+
+.alert {
+  padding: var(--space-sm);
+  border-radius: 5px;
+  margin-bottom: var(--space-sm);
+}
+
+.alert-success {
+  background-color: rgba(var(--success-rgb), 0.2);
+  color: var(--light);
+  border: 1px solid rgba(var(--success-rgb), 0.5);
+}
+
+.alert-error {
+  background-color: rgba(var(--error-rgb), 0.2);
+  color: var(--light);
+  border: 1px solid rgba(var(--error-rgb), 0.5);
+}

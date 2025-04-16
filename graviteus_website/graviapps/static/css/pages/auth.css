@@ -1,0 +1,55 @@
+.auth-page {
+    background:
+        linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
+        url('../images/bgReg.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-card {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+
+.auth-title {
+    color: var(--light);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: var(--light-gray);
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 10px;
+}
+
+.account-prompt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.account-text {
+    color: var(--light-gray);
+    font-size: 14px;
+}

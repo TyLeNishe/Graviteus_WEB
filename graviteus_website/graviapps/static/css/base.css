@@ -1,0 +1,109 @@
+:root {
+    /* Основные цвета в HEX */
+    --primary: #2196F3;
+    --primary-hover: #0d8bf2;
+    --secondary: #2c254e;
+    --dark: #1f1f1f;
+    --darker: #0a192f;
+    --light: #ffffff;
+    --light-gray: #b8b8b8;
+    --error: #ff6b6b;
+    --success: #4CAF50;
+
+    /* Социальные цвета */
+    --google: #DB4437;
+    --google-hover: #c23323;
+    --vk: #0077FF;
+    --vk-hover: #0066dd;
+    --yandex: #FFCC00;
+    --yandex-hover: #e6b800;
+
+    --primary-rgb: 33, 150, 243;
+    --error-rgb: 255, 107, 107;
+    --success-rgb: 76, 175, 80;
+    --google-rgb: 219, 68, 55;
+    --vk-rgb: 0, 119, 255;
+    --yandex-rgb: 255, 204, 0;
+
+    /* Тени */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 15px 25px rgba(0, 0, 0, 0.5);
+
+    /* Отступы */
+    --space-sm: 10px;
+    --space-md: 20px;
+    --space-lg: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--light);
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.body-bg {
+    background: linear-gradient(rgba(var(--darker-rgb), 0.9), rgba(var(--darker-rgb), 0.9)),
+                var(--bg-image) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+}
+
+.site-footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: var(--space-lg);
+    text-align: center;
+    color: var(--light-gray);
+    margin-top: auto;
+}
+
+.main-content {
+    flex: 1;
+    padding: 80px 20%;
+    line-height: 1.6;
+}
+
+:root {
+    /* Click effect */
+    --click-effect-color: rgba(27, 211, 211, 0.712);
+    --click-effect-size: 30px;
+    --click-effect-duration: 0.3s;
+
+    /* Hacker background */
+    --hacker-bg-color: rgba(121, 86, 219, 0.445);
+    --hacker-bg-symbols-count: 250;
+    --hacker-bg-speed-min: 10s;
+    --hacker-bg-speed-max: 14s;
+    --hacker-bg-font-size: 20px;
+
+    /* Glitch text */
+    --glitch-color-1: rgb(33, 79, 231);
+    --glitch-color-2: rgb(225, 0, 255);
+    --glitch-duration: 2s;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
