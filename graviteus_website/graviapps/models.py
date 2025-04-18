@@ -3,16 +3,23 @@ from django.contrib.auth.models import User
 import base64
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.BinaryField(null=True, blank=True)
-    avatar_content_type = models.CharField(max_length=50, null=True, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user_name = models.CharField(max_length=40, unique=True)
+    email = models.EmailField(unique=True)
+    registration_date = models.DateTimeField(auto_now_add=True)
+    avatar_url = models.URLField(max_length=255, blank=True, null=True)
+    user_stats = models.JSONField(default=dict)  # Better for storing structured data
+    is_active = models.BooleanField(default=True)
 
     def get_avatar_base64(self):
-        if self.avatar:
-            if isinstance(self.avatar, str):  # Если это строка, преобразуем в байты
-                return base64.b64encode(self.avatar.encode('utf-8')).decode('utf-8')
-            return base64.b64encode(self.avatar).decode('utf-8')  # Если это байты, кодируем напрямую
+        if self.avatar_binary:
+            return base64.b64encode(self.avatar_binary).decode('utf-8')
         return None
 
     def __str__(self):
-        return self.user.username
+        return f"{self.user_name} ({self.user.email})"
+
+    class Meta:
+        verbose_name = 'UserProfile'
+        verbose_name_plural = 'UserProfiles'
+        ordering = ['-registration_date']

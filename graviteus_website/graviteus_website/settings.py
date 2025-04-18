@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'graviteus_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'UserProfiles',     # Database name
+        'USER': 'postgres',         # PostgreSQL username
+        'PASSWORD': 'postgres',     # PostgreSQL password
+        'HOST': 'localhost',        # Set to 'db' if using Docker
+        'PORT': '5432',             # Default PostgreSQL port
     }
 }
 
