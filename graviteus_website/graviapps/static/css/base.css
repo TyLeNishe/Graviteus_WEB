@@ -91,19 +91,32 @@ body {
     --click-effect-duration: 0.3s;
 
     /* Hacker background */
-    --hacker-bg-color: rgba(121, 86, 219, 0.445);
-    --hacker-bg-symbols-count: 250;
+    --hacker-bg-color: rgba(126, 110, 216, 0.4);
+    --hacker-bg-symbols-count: 150;
     --hacker-bg-speed-min: 10s;
     --hacker-bg-speed-max: 14s;
-    --hacker-bg-font-size: 20px;
+    --hacker-bg-font-size: 80px;
+    --hacker-bg-fall-duration: 15s;
 
     /* Glitch text */
     --glitch-color-1: rgb(33, 79, 231);
     --glitch-color-2: rgb(225, 0, 255);
-    --glitch-duration: 2s;
+    --glitch-duration: 1.6s;
 }
 
 body {
     position: relative;
     overflow-x: hidden;
+}
+
+
+/* Шрифты */
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/tektur.ttf') format('truetype');
+}
+
+body {
+    font-family: 'CustomFont', sans-serif;
 }

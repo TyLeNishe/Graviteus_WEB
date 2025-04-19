@@ -67,17 +67,17 @@
         <div class="profile-icon" onclick="document.getElementById('avatar-input').click();">
             {% if user_profile.avatar %}
             <img id="avatar-preview"
-                src="data:{{ user_profile.avatar_content_type }};base64,{{ user_profile.avatar | base64_encode }}"
+                src="data:{{ user_profile.avatar_content_type }};base64,{{ user_profile.get_avatar_base64 }}"
                 alt="Аватар">
             {% else %}
             <img id="avatar-preview" src="{% static 'images/default.png' %}" alt="Аватар по умолчанию">
             {% endif %}
         </div>
+
         <form method="POST" enctype="multipart/form-data" id="avatar-form" style="display: none;">
             {% csrf_token %}
             <input type="file" name="avatar" id="avatar-input" accept="image/*" onchange="handleAvatarChange(event)">
         </form>
-
         <div class="accordion">
             <div class="accordion-item">
                 <div class="accordion-header">
@@ -101,7 +101,7 @@
                     </div>
                     <div class="change-email-container">
                         <span class="change-email" onclick="toggleUsernameEdit()">Изменить ник</span>
-                        {% if not is_google_user %}
+                        {% if not is_social_user %}
                         <span class="change-email" onclick="toggleEmailEdit()">Изменить почту</span>
                         {% endif %}
                     </div>

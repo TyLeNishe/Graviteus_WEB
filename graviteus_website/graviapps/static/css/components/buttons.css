@@ -1,6 +1,6 @@
 /* ===== БАЗОВЫЕ СТИЛИ КНОПОК ===== */
 .btn {
-  /* Обязательные свойства */
+  font-family: 'CustomFont', sans-serif;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -15,13 +15,14 @@
   line-height: 1;
   box-sizing: border-box;
 
-  /* Размеры по умолчанию */
   padding: 8px 20px;
   height: 36px;
   font-size: 14px;
 }
 
 /* ===== ТИПЫ КНОПОК ===== */
+
+/* Синяя кнопка (Войти, скачать) */
 .btn-primary {
   background-color: rgba(var(--primary-rgb), 0.9);
   color: white;
@@ -29,12 +30,14 @@
   height: 44px;
 }
 
+/* Прозрачная кнопка (О нас, магазин) */
 .btn-outline {
   background-color: transparent;
   color: white;
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Красная кнопка (Удалить аккаунт) */
 .btn-danger {
   background-color: rgba(var(--error-rgb), 0.9);
   color: white;
@@ -177,7 +180,6 @@
   color: var(--primary);
 }
 
-/* Ссылка для изменения данных */
 .change-email {
   color: var(--primary);
   cursor: pointer;
@@ -194,3 +196,29 @@
   text-align: right;
   margin-top: var(--space-sm);
 }
+
+/* ===== СТИЛИ ДЛЯ СТРЕЛОЧЕК ===== */
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 32px;
+  color: white;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
