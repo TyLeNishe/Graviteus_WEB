@@ -92,13 +92,6 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-footer {
-  padding: var(--space-lg);
-  text-align: center;
-  color: var(--light-gray);
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 html {
   background-color: var(--darker);
 }

@@ -1,43 +1,74 @@
+:root {
+  /* ========== Размеры кнопок ========== */
+  --btn-border-radius: 25px;
+  --btn-border-width: 2px;
+  --btn-blur: blur(5px);
+  
+  /* Размеры по умолчанию */
+  --btn-padding: 8px 20px;
+  --btn-height: 36px;
+  --btn-font-size: 14px;
+  
+  /* Маленькие кнопки */
+  --btn-sm-padding: 6px 16px;
+  --btn-sm-font-size: 13px;
+  
+  /* Средние кнопки */
+  --btn-md-padding: 12px 24px;
+  --btn-md-font-size: 16px;
+  
+  /* Большие кнопки */
+  --btn-lg-padding: 16px 32px;
+  --btn-lg-font-size: 18px;
+  
+  /* Аватар-кнопки */
+  --btn-avatar-size: 42px;
+  --btn-avatar-border-width: 2px;
+  --btn-avatar-lg-border-width: 2.5px;
+  
+  /* Навигационные кнопки */
+  --nav-btn-padding: 25px;
+  --nav-btn-font-size: 32px;
+}
+
 /* ===== БАЗОВЫЕ СТИЛИ КНОПОК ===== */
 .btn {
   font-family: 'CustomFont', sans-serif;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 25px;
+  border-radius: var(--btn-border-radius);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: var(--btn-border-width) solid transparent;
   text-decoration: none;
   white-space: nowrap;
-  backdrop-filter: blur(5px);
+  backdrop-filter: var(--btn-blur);
   line-height: 1;
   box-sizing: border-box;
-
-  padding: 8px 20px;
-  height: 36px;
-  font-size: 14px;
+  padding: var(--btn-padding);
+  height: var(--btn-height);
+  font-size: var(--btn-font-size);
 }
 
 /* ===== ТИПЫ КНОПОК ===== */
-
-/* Синяя кнопка (Войти, скачать) */
+/* Синяя кнопка (Скачать, войти, зарегистрироваться) */
 .btn-primary {
   background-color: rgba(var(--primary-rgb), 0.9);
   color: white;
   border-color: rgba(var(--primary-rgb), 0.9);
-  height: 44px;
+  height: var(--size-md);
 }
 
-/* Прозрачная кнопка (О нас, магазин) */
+/* Белая (прозрачная) кнопка (Все кнопки в шапке, за исключением иконки профиля) */
 .btn-outline {
   background-color: transparent;
   color: white;
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Красная кнопка (Удалить аккаунт) */
+/* Красная кнопка (удалить аккаунт) */
 .btn-danger {
   background-color: rgba(var(--error-rgb), 0.9);
   color: white;
@@ -53,50 +84,15 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ===== РАЗМЕРЫ ===== */
-.btn-sm {
-  padding: 6px 16px;
-  height: 32px;
-  font-size: 13px;
-}
-
-.btn-md {
-  padding: 12px 24px;
-  height: 44px;
-  font-size: 16px;
-}
-
-.btn-lg {
-  padding: 16px 32px;
-  height: 52px;
-  font-size: 18px;
-}
-
-/* ===== СПЕЦИАЛЬНЫЕ КНОПКИ ===== */
+/* ===== АВАТАРКА ПРОФИЛЯ (КНОПКА ПЕРЕХОДА НА СТРАНИЦУ ПРОФИЛЯ) ===== */
 .btn-avatar {
   padding: 0;
   min-width: 0;
   border-radius: 50%;
   overflow: hidden;
-  width: 42px;
-  height: 42px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.btn-avatar.btn-sm {
-  width: 36px;
-  height: 36px;
-}
-
-.btn-avatar.btn-md {
-  width: 42px;
-  height: 42px;
-}
-
-.btn-avatar.btn-lg {
-  width: 48px;
-  height: 48px;
-  border-width: 2.5px;
+  width: var(--btn-avatar-size);
+  height: var(--btn-avatar-size);
+  border: var(--btn-avatar-border-width) solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-avatar img {
@@ -110,27 +106,79 @@
   transform: scale(1.05);
 }
 
+/* ===== РАЗМЕРЫ КНОПОК ===== */
+
+.btn-sm {
+  padding: var(--btn-sm-padding);
+  height: var(--size-sm);
+  font-size: var(--btn-sm-font-size);
+}
+
+.btn-md {
+  padding: var(--btn-md-padding);
+  height: var(--size-md);
+  font-size: var(--btn-md-font-size);
+}
+
+.btn-lg {
+  padding: var(--btn-lg-padding);
+  height: var(--size-lg);
+  font-size: var(--btn-lg-font-size);
+}
+
+/* Аватарка */
+/* Пример использования: style="btn btn-avatar btn-sm" */
+
+.btn-avatar.btn-sm {
+  padding: 0;
+  width: var(--size-sm);
+  height: var(--size-sm);
+}
+
+.btn-avatar.btn-md {
+  padding: 0;
+  width: var(--size-md);
+  height: var(--size-md);
+}
+
+.btn-avatar.btn-lg {
+  padding: 0;
+  width: var(--size-lg);
+  height: var(--size-lg);
+  border-width: var(--btn-avatar-lg-border-width);
+}
+
 /* ===== ДОПОЛНИТЕЛЬНЫЕ КОМПОНЕНТЫ ===== */
 .btn-block {
   display: flex;
   width: 100%;
 }
 
+/* ===== КНОПКИ СОЦСЕТЕЙ ===== */
 .social-btn {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  min-height: 44px;
-  border-radius: 25px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: var(--space-sm);
+  min-height: var(--size-md);
+  border-radius: var(--btn-border-radius);
+  border: var(--btn-border-width) solid rgba(255, 255, 255, 0.5);
   color: white;
-  font-size: 16px;
+  font-size: var(--btn-md-font-size);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  backdrop-filter: var(--btn-blur);
+}
+
+/* для нормального расположения соц. кнопок */
+.social-btn i,
+.social-btn .btn-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .btn-vk {
@@ -162,9 +210,10 @@
   background-color: rgba(var(--google-rgb), 0.7);
 }
 
+/* Ссылки (подчёркнутый текст, а не кнопка) */
 .account-link {
   color: var(--primary);
-  font-size: 14px;
+  font-size: var(--btn-sm-font-size);
   padding: 6px 12px;
   border-radius: 4px;
   transition: all 0.3s;
@@ -197,22 +246,21 @@
   margin-top: var(--space-sm);
 }
 
-/* ===== СТИЛИ ДЛЯ СТРЕЛОЧЕК ===== */
-
+/* ===== СТИЛИ ДЛЯ СТРЕЛОЧЕК КАРУСЕЛИ ===== */
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.3);
   border: none;
-  padding: 25px;
+  padding: var(--nav-btn-padding);
   cursor: pointer;
   border-radius: 50%;
-  font-size: 32px;
+  font-size: var(--nav-btn-font-size);
   color: white;
   z-index: 10;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  backdrop-filter: var(--btn-blur);
 }
 
 .nav-btn:hover {
