@@ -1,32 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const createLayer = (zIndex, scale, speedFactor) => {
-        const layer = document.createElement('div');
-        layer.className = `hacker-bg-layer`;
-        document.body.appendChild(layer);
+    const container = document.createElement('div');
+    container.className = 'hacker-bg-container';
+    document.body.appendChild(container);
 
-        const symbolsCount = parseInt(getComputedStyle(document.documentElement)
-            .getPropertyValue('--hacker-bg-symbols-count'));
-        const speedMin = parseFloat(getComputedStyle(document.documentElement)
-            .getPropertyValue('--hacker-bg-speed-min'));
-        const speedMax = parseFloat(getComputedStyle(document.documentElement)
-            .getPropertyValue('--hacker-bg-speed-max'));
+    const createLayer = (zIndex, density = 1) => {
+        const layer = document.createElement('div');
+        layer.className = 'hacker-bg-layer';
+        layer.style.zIndex = zIndex;
+        container.appendChild(layer);
+
+        const computedStyle = getComputedStyle(document.documentElement);
+        const symbolsCount = parseInt(computedStyle.getPropertyValue('--hacker-bg-symbols-count')) || Math.floor(100 * density);
+        const fallDuration = computedStyle.getPropertyValue('--hacker-bg-fall-duration') || '10s';
+        const speedVariation = parseFloat(computedStyle.getPropertyValue('--hacker-bg-speed-variation')) || 0.5;
+
+        const getRandomChar = () => String.fromCharCode(33 + Math.floor(Math.random() * 94));
 
         for (let i = 0; i < symbolsCount; i++) {
             const symbol = document.createElement('div');
             symbol.className = 'hacker-bg-symbol';
-            symbol.textContent = String.fromCharCode(33 + Math.random() * 94);
-            symbol.style.left = `${Math.random() * 100}%`;
-            symbol.style.animationDuration = `${speedMin + Math.random() * (speedMax - speedMin)}s`;
-            symbol.style.opacity = `${0.1 + Math.random() * 0.5}`;
+            symbol.textContent = getRandomChar();
+            
+            symbol.style.setProperty('--random-offset', Math.random());
+            symbol.style.setProperty('--random-x', Math.random());
+            symbol.style.setProperty('--initial-opacity', (0.1 + Math.random() * 0.4).toString());
+            symbol.style.setProperty('--animation-delay', `${Math.random() * 3}s`);
+            
+            const durationVariation = 1 + (Math.random() * 2 - 1) * speedVariation;
+            symbol.style.setProperty('--fall-duration', `calc(${fallDuration} * ${durationVariation})`);
+            
             layer.appendChild(symbol);
         }
-
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            layer.style.transform = `translateY(${scrollY * speedFactor}px) translateZ(-${zIndex}px) scale(${scale})`;
-        });
     };
 
-    createLayer(1, 2, 0.3); 
-    createLayer(2, 3, 0.2); 
+    createLayer(-1, 0.8); 
+    createLayer(-2, 1);   
 });

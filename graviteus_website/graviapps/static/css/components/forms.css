@@ -1,53 +1,85 @@
+:root {
+    /* ========== Формы ========== */
+    --form-group-margin: var(--space-md);
+    --form-label-color: var(--light-gray);
+    --form-label-margin: 8px;
+    --form-label-font-size: 14px;
+    
+    --form-control-padding: 12px 15px;
+    --form-control-bg: rgba(255, 255, 255, 0.1);
+    --form-control-border: 2px solid rgba(255, 255, 255, 0.3);
+    --form-control-border-radius: 25px;
+    --form-control-font-size: 16px;
+    --form-control-height: 44px;
+    --form-control-blur: blur(5px);
+    
+    --form-control-hover-bg: rgba(255, 255, 255, 0.15);
+    --form-control-hover-border: rgba(255, 255, 255, 0.4);
+    
+    --form-control-focus-bg: rgba(255, 255, 255, 0.2);
+    --form-control-focus-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+    
+    --toggle-password-right: 15px;
+    --toggle-password-opacity: 0.7;
+    
+    --errorlist-color: var(--error);
+    --errorlist-margin: 5px;
+    --errorlist-font-size: 14px;
+    
+
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ФОРМ ===== */
 .form-group {
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--form-group-margin);
 }
 
 .form-label {
     display: block;
-    color: var(--light-gray);
+    color: var(--form-label-color);
     font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 14px;
+    margin-bottom: var(--form-label-margin);
+    font-size: var(--form-label-font-size);
 }
 
 .form-control {
     width: 100%;
-    padding: 12px 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 25px;
+    padding: var(--form-control-padding);
+    background-color: var(--form-control-bg);
+    border: var(--form-control-border);
+    border-radius: var(--form-control-border-radius);
     color: var(--light);
-    font-size: 16px;
+    font-size: var(--form-control-font-size);
     transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-    height: 44px;
+    backdrop-filter: var(--form-control-blur);
+    height: var(--form-control-height);
 }
 
 .form-control:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--form-control-hover-bg);
+    border-color: var(--form-control-hover-border);
 }
 
 .form-control:focus {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--form-control-focus-bg);
     border-color: var(--primary);
     transform: scale(1.02);
-    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+    box-shadow: var(--form-control-focus-shadow);
     outline: none;
 }
 
-/* Обертка для поля с паролем */
+/* ===== ПОЛЕ С ПАРОЛЕМ ===== */
 .password-input-wrapper {
     position: relative;
 }
 
 .toggle-password {
     position: absolute;
-    right: 15px;
+    right: var(--toggle-password-right);
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    opacity: 0.7;
+    opacity: var(--toggle-password-opacity);
     transition: opacity 0.3s;
 }
 
@@ -55,26 +87,20 @@
     opacity: 1;
 }
 
-/* Сообщения об ошибках */
+/* ===== СООБЩЕНИЯ ОБ ОШИБКАХ ===== */
 .errorlist {
-    color: var(--error);
-    margin-top: 5px;
-    font-size: 14px;
+    color: var(--errorlist-color);
+    margin-top: var(--errorlist-margin);
+    font-size: var(--errorlist-font-size);
     list-style: none;
     animation: fadeIn 0.3s ease;
 }
 
-.social-buttons-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.social-btn i,
-.social-btn .btn-content {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+/* Маленькие поля для смены ника/почты */
+.narrow-input {
+    width: 150px;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
