@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/fun/glitch-text.css' %}">
     <link rel="stylesheet" href="{% static 'css/fun/scrolling.css' %}">
     <link rel="stylesheet" href="{% static 'css/fun/print.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/jora.css' %}">
 </head>
 
 <body>
@@ -45,8 +46,10 @@
     </header>
 
     <!-- Герой-секция -->
-        <div class="hero-section" >
+        <div class="hero-section">
+            <div class="spawnable">
             <img src="{% static 'images/demo-screen6.jpg' %}" class="hero-image" alt="Главное изображение">
+        </div>
             <h1 class="title glitch-text">Graviteus</h1>
             <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download>
                 <button class="btn btn-primary btn-lg">Скачать</button>
@@ -55,7 +58,7 @@
 
         <!-- Федерация: Галерея скриншотов -->
         <div class="content-section">
-            <div class="image-pair">
+            <div class="image-pair spawnable">
                 <img src="{% static 'images/demo-screen1.jpg' %}" class="content-image" alt="Скриншот 1">
                 <img src="{% static 'images/demo-screen2.jpg' %}" class="content-image" alt="Скриншот 2">
             </div>
@@ -88,13 +91,13 @@
         </div>
     </div>
     <!-- Переходная зона -->
-        <section class="transition">
+        <section class="transition spawnable">
             <h2 class="glitch-text">Но правда может быть другой...</h2>
         </section>
 
     <!-- Сопротивление: Галерея -->
         <div class="content-section">
-            <div class="image-pair">
+            <div class="image-pair spawnable">
                 <img src="{% static 'images/resist-screen1.jpg' %}" class="content-image" alt="Сопротивление 1">
                 <img src="{% static 'images/resist-screen2.jpg' %}" class="content-image" alt="Сопротивление 2">
                 <img src="{% static 'images/resist-screen3.jpg' %}" class="content-image" alt="Сопротивление 3">
@@ -109,19 +112,20 @@
                 </div>
             </div>
     </div>
-    <footer class="site-footer">
+    <footer class="site-footer spawnable">
         <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download
             class="btn btn-primary btn-lg">
             🚀 Скачать игру
         </a>
         <p>© 2025 Graviteus Project. Все права защищены.</p>
     </footer>
-    <script src="{% static 'js/fun/click-effeя  ct.js' %}"></script>
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
     <script src="{% static 'js/fun/hacker-bg.js' %}"></script>
     <script src="{% static 'js/fun/glitch-text.js' %}"></script>
     <script src="{% static 'js/fun/scrolling.js' %}"></script>
     <script src="{% static 'js/script.js' %}" defer></script>
     <script src="{% static 'js/fun/print.js' %}"></script>
+    <script src="{% static 'js/fun/jora.js' %}"></script>
 </body>
 
 </html>

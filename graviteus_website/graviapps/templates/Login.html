@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{% static 'css/components/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/components/cards.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/auth.css' %}">
-    
     <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
-    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/fun/jora.css' %}">
+
     <title>Вход</title>
     <style>
         .auth-page {
@@ -25,7 +25,7 @@
 </head>
 
 <body class="auth-page">
-    <div class="auth-card">
+    <div class="auth-card spawnable">
         <h2 class="card-title">Вход в систему</h2>
 
         <form method="post" action="{% url 'login' %}">
@@ -41,8 +41,7 @@
 
             <div class="form-group">
                 <label for="id_login" class="form-label">Имя пользователя:</label>
-                <input type="text" name="username" id="id_login" class="form-control"
-                    required>
+                <input type="text" name="username" id="id_login" class="form-control" required>
             </div>
 
             <div class="form-group password-container">
@@ -97,6 +96,8 @@
             }
         }
     </script>
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <script src="{% static 'js/fun/jora.js' %}"></script>
 </body>
 
 </html>
