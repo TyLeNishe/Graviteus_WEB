@@ -21,3 +21,23 @@
   padding: 30px;
   box-shadow: var(--shadow-lg);
 }
+
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 20px;
+    margin-bottom: var(--space-md);
+  }
+
+  .auth-card {
+    width: 300px;
+    padding: 30px;
+    border-radius: 8px;
+  }
+
+  .profile-card {
+    margin: 60px auto 20px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+}

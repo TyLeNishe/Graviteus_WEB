@@ -7,9 +7,18 @@
     <list default="true" id="61a01936-7d18-45b9-b881-0fa4bf95c571" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/graviteus-new-main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/graviteus-new-main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/buttons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/cards.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/glitch-text.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/glitch-text.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/hacker-bg.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/hacker-bg.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/jora.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/jora.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/scrolling.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/fun/scrolling.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/pages/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/pages/home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +26,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="DegoEz's-test" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -28,7 +42,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/TyLeNishe/Graviteus_WEB.git&quot;,
-    &quot;accountId&quot;: &quot;48b62eee-4ba8-4727-8f06-2567272b2cb9&quot;
+    &quot;accountId&quot;: &quot;d5fd97fa-fabe-4790-a391-6bc61afafaa2&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -48,99 +62,10 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="graviteus-main" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="graviteus-main" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Docutils task">
-      <module name="graviteus-main" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Sphinx task">
-      <module name="graviteus-main" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="graviteus-main" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-8336bb23522e-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.19072.16" />
+        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
       </set>
     </attachedChunks>
   </component>
