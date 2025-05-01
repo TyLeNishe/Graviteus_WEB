@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/components/cards.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
     <link rel="stylesheet" href="{% static 'css/fun/hacker-bg.css' %}">
     <link rel="stylesheet" href="{% static 'css/fun/glitch-text.css' %}">
     <link rel="stylesheet" href="{% static 'css/fun/scrolling.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/print.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/jora.css' %}">
 </head>
 
 <body>
@@ -45,63 +46,73 @@
     </header>
 
     <!-- Герой-секция -->
-    <div class="hero-section">
-        <img src="{% static 'images/demo-screen6.jpg' %}" class="hero-image" alt="Главное изображение">
-        <h1 class="title glitch-text">Graviteus</h1>
-        <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download>
-            <button class="btn btn-primary btn-lg">Скачать</button>
-        </a>
-    </div>
-
-    <!-- Федерация: Галерея скриншотов -->
-    <div class="content-section">
-        <div class="image-pair">
-            <img src="{% static 'images/demo-screen1.jpg' %}" class="content-image" alt="Скриншот 1">
-            <img src="{% static 'images/demo-screen2.jpg' %}" class="content-image" alt="Скриншот 2">
+        <div class="hero-section">
+            <div class="spawnable">
+            <img src="{% static 'images/demo-screen6.jpg' %}" class="hero-image" alt="Главное изображение">
         </div>
-        <div class="text-block">
-            <h2>СЛУЖИ ФЛОТУ! ПОДПИШИ КОНТРАКТ!</h2>
-            <p>Стань частью великого завоевания и расширения границ Федерации.</p>
+            <h1 class="title glitch-text">Graviteus</h1>
+            <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download>
+                <button class="btn btn-primary btn-lg">Скачать</button>
+            </a>
         </div>
-    </div>
 
-    <!-- Слайдер изображений -->
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slide"><img src="{% static 'images/demo-screen3.jpg' %}" class="content-image-slider" alt="Слайд 1">
+        <!-- Федерация: Галерея скриншотов -->
+        <div class="content-section">
+            <div class="image-pair spawnable">
+                <img src="{% static 'images/demo-screen1.jpg' %}" class="content-image" alt="Скриншот 1">
+                <img src="{% static 'images/demo-screen2.jpg' %}" class="content-image" alt="Скриншот 2">
             </div>
-            <div class="slide"><img src="{% static 'images/demo-screen4.jpg' %}" class="content-image-slider" alt="Слайд 2">
-            </div>
-            <div class="slide"><img src="{% static 'images/demo-screen5.jpg' %}" class="content-image-slider" alt="Слайд 3">
-            </div>
-            <div class="slide"><img src="{% static 'images/demo-screen6.jpg' %}" class="content-image-slider" alt="Слайд 4">
-            </div>
-            <div class="slide"><img src="{% static 'images/demo-screen1.jpg' %}" class="content-image-slider" alt="Слайд 5">
+            <div class="text-block">
+                <h2>СЛУЖИ ФЛОТУ! ПОДПИШИ КОНТРАКТ!</h2>
+                <div class="typewriter-effect">
+                    <div class="text" id="typewriter-text">
+                        <p>Стань частью великого завоевания и расширения границ Федерации.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="nav-btn prev">❮</button>
-        <button class="nav-btn next">❯</button>
-    </div>
 
+        <!-- Слайдер изображений -->
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="{% static 'images/demo-screen3.jpg' %}" class="content-image-slider" alt="Слайд 1">
+                </div>
+                <div class="slide"><img src="{% static 'images/demo-screen4.jpg' %}" class="content-image-slider" alt="Слайд 2">
+                </div>
+                <div class="slide"><img src="{% static 'images/demo-screen5.jpg' %}" class="content-image-slider" alt="Слайд 3">
+                </div>
+                <div class="slide"><img src="{% static 'images/demo-screen6.jpg' %}" class="content-image-slider" alt="Слайд 4">
+                </div>
+                <div class="slide"><img src="{% static 'images/demo-screen1.jpg' %}" class="content-image-slider" alt="Слайд 5">
+                </div>
+            </div>
+            <button class="nav-btn prev">❮</button>
+            <button class="nav-btn next">❯</button>
+        </div>
+    </div>
     <!-- Переходная зона -->
-    <section class="transition">
-        <h2 class="glitch-text">Но правда может быть другой...</h2>
-    </section>
+        <section class="transition spawnable">
+            <h2 class="glitch-text">Но правда может быть другой...</h2>
+        </section>
 
     <!-- Сопротивление: Галерея -->
-    <div class="content-section">
-        <div class="image-pair">
-            <img src="{% static 'images/resist-screen1.jpg' %}" class="content-image" alt="Сопротивление 1">
-            <img src="{% static 'images/resist-screen2.jpg' %}" class="content-image" alt="Сопротивление 2">
-            <img src="{% static 'images/resist-screen3.jpg' %}" class="content-image" alt="Сопротивление 3">
-            <img src="{% static 'images/resist-screen4.jpg' %}" class="content-image" alt="Сопротивление 4">
-        </div>
-        <div class="text-block">
-            <h2>НЕ ВЕРЬ ЛЖИ! БЕГИ, ПОКА МОЖЕШЬ!</h2>
-            <p>Сопротивление ведет борьбу за правду. Федерация — это ложь!</p>
-        </div>
+        <div class="content-section">
+            <div class="image-pair spawnable">
+                <img src="{% static 'images/resist-screen1.jpg' %}" class="content-image" alt="Сопротивление 1">
+                <img src="{% static 'images/resist-screen2.jpg' %}" class="content-image" alt="Сопротивление 2">
+                <img src="{% static 'images/resist-screen3.jpg' %}" class="content-image" alt="Сопротивление 3">
+                <img src="{% static 'images/resist-screen4.jpg' %}" class="content-image" alt="Сопротивление 4">
+            </div>
+            <div class="text-block" >
+                    <h2 class="glitch-text">НЕ ВЕРЬ ЛЖИ! БЕГИ, ПОКА МОЖЕШЬ!</h2>
+                <div class="typewriter-effect">
+                        <div class="text" id="typewriter-text">
+                            <p>Сопротивление ведет борьбу за правду. Федерация — это ложь!</p>
+                        </div>
+                </div>
+            </div>
     </div>
-    <footer>
+    <footer class="site-footer spawnable">
         <a href="https://github.com/TyLeNishe/Graviteus_GAME/archive/refs/heads/master.zip" download
             class="btn btn-primary btn-lg">
             🚀 Скачать игру
@@ -113,6 +124,8 @@
     <script src="{% static 'js/fun/glitch-text.js' %}"></script>
     <script src="{% static 'js/fun/scrolling.js' %}"></script>
     <script src="{% static 'js/script.js' %}" defer></script>
+    <script src="{% static 'js/fun/print.js' %}"></script>
+    <script src="{% static 'js/fun/jora.js' %}"></script>
 </body>
 
 </html>

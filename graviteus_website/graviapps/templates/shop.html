@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
-
     <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
-    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/fun/jora.css' %}">
+
     <style>
         body {
             background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
@@ -39,13 +39,6 @@
             font-size: 1.5em;
             margin-bottom: 30px;
         }
-        
-        footer {
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: var(--space-lg);
-            text-align: center;
-            color: var(--light-gray);
-        }
     </style>
 </head>
 <body>
@@ -65,11 +58,14 @@
     <main>
         <h1 class="shop-title">Магазин Graviteus</h1>
         <p class="coming-soon">Скоро откроется!</p>
-        <p>Здесь будут доступны эксклюзивные косметические предметы и улучшения для вашего корабля.</p>
+        <p>Здесь будут доступны эксклюзивные косметические предметы, Жорики и много чего ещё.</p>
     </main>
 
-    <footer>
+    <footer footer class="site-footer spawnable">
         <p>© 2025 Graviteus Project. Все права защищены.</p>
     </footer>
+
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <script src="{% static 'js/fun/jora.js' %}"></script>
 </body>
 </html>

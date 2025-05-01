@@ -1,3 +1,8 @@
+:root {
+    --social-buttons-gap: 10px;
+    --social-buttons-margin: 15px;
+}
+
 .auth-page {
     background:
         linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
@@ -7,14 +12,6 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
-
-.auth-card {
-    background-color: rgba(0, 0, 0, 0.75);
-    width: 400px;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-lg);
 }
 
 .auth-title {
@@ -52,4 +49,11 @@
 .account-text {
     color: var(--light-gray);
     font-size: 14px;
+}
+
+.social-buttons-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--social-buttons-gap);
+    margin-top: var(--social-buttons-margin);
 }

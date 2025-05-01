@@ -49,7 +49,7 @@ def about(request):
 def profile(request):
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
     
-    is_google_user = request.user.social_auth.filter(provider='google-oauth2').exists()
+    is_social_user = request.user.social_auth.exists()
     
     if request.method == 'POST' and 'avatar' in request.FILES:
         avatar_file = request.FILES['avatar']
@@ -60,13 +60,13 @@ def profile(request):
     
     return render(request, 'Profile.html', {
         'user_profile': user_profile,
-        'is_google_user': is_google_user
+        'is_social_user': is_social_user
     })
 
 @login_required
 def update_email(request):
-    if request.user.social_auth.filter(provider='google-oauth2').exists():
-        messages.error(request, 'Изменение почты недоступно для аккаунтов Google.')
+    if request.user.social_auth.exists():
+        messages.error(request, 'Изменение почты недоступно для социальных аккаунтов.')
         return redirect('profile')
     
     if request.method == 'POST':
