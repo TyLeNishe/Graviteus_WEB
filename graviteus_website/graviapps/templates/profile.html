@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="{% static 'css/components/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/profile.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
-    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/fun/jora.css' %}">
+    
     <style>
         body {
             background: url('{% static "images/bgReg.png" %}') no-repeat center center fixed;
@@ -53,7 +53,7 @@
     </header>
 
     <!-- Основное содержимое -->
-    <div class="profile-card">
+    <div class="profile-card spawnable">
         {% if messages %}
         <div class="messages">
             {% for message in messages %}
@@ -176,6 +176,8 @@
     </div>
 
     <script src="{% static 'js/script_profile.js' %}"></script>
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <script src="{% static 'js/fun/jora.js' %}"></script>
 </body>
 
 </html>

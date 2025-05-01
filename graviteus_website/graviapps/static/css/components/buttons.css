@@ -270,3 +270,50 @@
 
 .prev { left: 0; }
 .next { right: 0; }
+
+@media (max-width: 768px) {
+  :root {
+    --btn-border-radius: 20px;
+    --btn-border-width: 2px;
+    --btn-blur: blur(4px);
+
+    --btn-padding: 6px 16px;
+    --btn-height: 32px;
+    --btn-font-size: 12px;
+
+    --btn-sm-padding: 4px 12px;
+    --btn-sm-font-size: 11px;
+
+    --btn-md-padding: 8px 18px;
+    --btn-md-font-size: 13px;
+
+    --btn-lg-padding: 12px 24px;
+    --btn-lg-font-size: 15px;
+
+    --btn-avatar-size: 34px;
+    --btn-avatar-border-width: 1.5px;
+    --btn-avatar-lg-border-width: 2px;
+
+    --nav-btn-padding: 18px;
+    --nav-btn-font-size: 26px;
+  }
+
+  .account-link {
+    font-size: var(--btn-sm-font-size);
+    padding: 4px 10px;
+  }
+
+  .change-email {
+    font-size: var(--btn-sm-font-size);
+  }
+
+  .change-email-container {
+    text-align: center;
+    margin-top: var(--space-sm);
+  }
+
+  .social-btn {
+    font-size: var(--btn-sm-font-size);
+    min-height: var(--size-sm);
+  }
+}

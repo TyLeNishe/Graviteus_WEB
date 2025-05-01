@@ -103,4 +103,28 @@
     font-size: 14px;
     margin-left: 10px;
   }
-  
+
+@media (max-width: 768px) {
+  :root {
+    --form-group-margin: var(--space-sm);
+    --form-label-margin: 6px;
+    --form-label-font-size: 12px;
+
+    --form-control-padding: 10px 12px;
+    --form-control-font-size: 14px;
+    --form-control-height: 38px;
+    --form-control-border-radius: 20px;
+
+    --toggle-password-right: 10px;
+
+    --errorlist-font-size: 12px;
+    --errorlist-margin: 4px;
+  }
+
+  .narrow-input {
+    width: 120px;
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+}

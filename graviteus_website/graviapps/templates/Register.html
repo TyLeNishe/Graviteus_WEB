@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{% static 'css/components/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/components/cards.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/auth.css' %}">
-
     <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
-    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/fun/jora.css' %}">
+
     <title>Регистрация</title>
     <style>
         .auth-page {
@@ -25,12 +25,12 @@
 </head>
 
 <body class="auth-page">
-    <div class="auth-card">
+    <div class="auth-card spawnable">
         <h2 class="card-title">Регистрация</h2>
 
         <form method="post">
             {% csrf_token %}
-            
+
             {% if form.non_field_errors %}
             <div class="errorlist">
                 {% for error in form.non_field_errors %}
@@ -119,5 +119,8 @@
             }
         }
     </script>
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <script src="{% static 'js/fun/jora.js' %}"></script>
 </body>
+
 </html>

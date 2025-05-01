@@ -92,3 +92,24 @@ body {
     font-family: 'CustomFont';
     src: url('../fonts/tektur.ttf') format('truetype');
 }
+
+
+@media (max-width: 768px) {
+  :root {
+    --space-sm: 6px;
+    --space-md: 12px;
+    --space-lg: 20px;
+
+    --size-sm: 30px;
+    --size-md: 36px;
+    --size-lg: 44px;
+
+    --click-effect-size: 20px;
+    --click-effect-duration: 0.25s;
+
+    --hacker-bg-font-size: 50px;
+    --hacker-bg-fall-duration: 12s;
+    --hacker-bg-speed-min: 8s;
+    --hacker-bg-speed-max: 11s;
+  }
+}
