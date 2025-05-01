@@ -41,6 +41,7 @@
             </a>
             {% endif %}
             <a href="{% url 'about' %}" class="btn btn-outline btn-sm">О нас</a>
+            <button id="musicToggle" class="btn btn-outline btn-sm">Включить музыку</button>
         </div>
     </header>
 
@@ -52,6 +53,11 @@
                 <button class="btn btn-primary btn-lg">Скачать</button>
             </a>
         </div>
+        <audio loop id="bgAudio">
+            <source src="{% static 'music/Variant.mp3' %}" type="audio/mpeg">
+            <source src="{% static 'music/Variant.ogg' %}" type="audio/mpeg">
+        </audio>
+
 
         <!-- Федерация: Галерея скриншотов -->
         <div class="content-section">
@@ -122,6 +128,7 @@
     <script src="{% static 'js/fun/scrolling.js' %}"></script>
     <script src="{% static 'js/script.js' %}" defer></script>
     <script src="{% static 'js/fun/print.js' %}"></script>
+    <script src="{% static 'js/fun/music.js' %}"></script>
 </body>
 
 </html>
