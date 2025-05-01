@@ -1,6 +1,6 @@
 const audio = document.getElementById('bgAudio');
 const toggleBtn = document.getElementById('musicToggle');
-let isPlaying = false;
+let isPlaying = true;
 
 audio.volume = 0.3;
 

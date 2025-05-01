@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <audio loop id="bgAudio">
+        <source src="{% static 'music/Variant.mp3' %}" type="audio/mpeg">
+        <source src="{% static 'music/Variant.ogg' %}">
+    </audio>
     <header class="header">
         <nav class="header-nav">
             {% if not user.is_authenticated %}
