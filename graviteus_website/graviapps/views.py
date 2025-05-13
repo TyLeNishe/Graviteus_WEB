@@ -21,6 +21,9 @@ from .models import UserProfile
 def home(request):
     return render(request, 'home.html')
 
+def lor(request):
+    return render(request, 'lor.html')
+
 
 def my_login(request):
     if request.method == 'POST':
