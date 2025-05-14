@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(35, 40, 62);
+}
+.archive-section {
+    border: 2px dashed #3f3f3f;
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.corrupted-text {
+    color: #ff5555;
+    font-family: 'CustomFont';
+    text-shadow: 0 0 5px rgba(255,85,85,0.3);
+}
+
+.security-warning {
+    border-left: 4px solid #ff0000;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255,0,0,0.1);
+}
+
+.artifact-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 1rem 0;
+    border: 3px solid #454545;
+}
+
+.protocol-message {
+    background: rgba(0, 255, 0, 0.05);
+    border: 1px solid #0f0;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-family: 'CustomFont';
+}

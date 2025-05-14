@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="61a01936-7d18-45b9-b881-0fa4bf95c571" name="Changes" comment="fix bag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/components/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
