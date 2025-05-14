@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61a01936-7d18-45b9-b881-0fa4bf95c571" name="Changes" comment="fix bag">
+    <list default="true" id="61a01936-7d18-45b9-b881-0fa4bf95c571" name="Changes" comment="улучшили лор">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747214737255</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="улучшили лор">
+      <option name="closed" value="true" />
+      <created>1747217562109</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747217562109</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +120,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="готовый лор" />
     <MESSAGE value="fix bag" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bag" />
+    <MESSAGE value="улучшили лор" />
+    <option name="LAST_COMMIT_MESSAGE" value="улучшили лор" />
   </component>
 </project>

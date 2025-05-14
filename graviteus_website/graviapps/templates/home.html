@@ -31,6 +31,7 @@
             <a href="{% url 'login' %}" class="btn btn-outline btn-sm">Войти</a>
             {% else %}
             <a href="{% url 'shop' %}" class="btn btn-outline btn-sm">Магазин</a>
+            <a href="{% url 'lor' %}" class="btn btn-outline btn-sm">Лор</a>
             <form action="{% url 'logout' %}" method="post" style="display: inline;">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline btn-sm">Выйти</button>
