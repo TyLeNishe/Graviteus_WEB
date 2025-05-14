@@ -22,7 +22,7 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         main {
             flex: 1;
             padding: 80px 20%;
@@ -42,6 +42,7 @@
                 <img src="{% if user.userprofile.avatar %}data:{{ user.userprofile.avatar_content_type }};base64,{{ user.userprofile.get_avatar_base64 }}{% else %}{% static 'images/default.png' %}{% endif %}" alt="Профиль">
             </a>
             {% endif %}
+        <button id="musicToggle" class="btn btn-outline btn-sm">Включить музыку</button>
         </div>
     </header>
 
