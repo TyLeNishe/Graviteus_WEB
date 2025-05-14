@@ -26,7 +26,6 @@
 /* Центральный элемент (для username) */
 .header-center {
   position: relative;
-  left: 50%;
   transform: translateX(-50%);
   font-size: 18px;
   font-weight: bold;
@@ -57,7 +56,7 @@
   }
 
   .header-center {
-    font-size: 16px;
+    font-size: 6px;
     max-width: 140px;
   }
 
