@@ -27,6 +27,10 @@
 </head>
 
 <body>
+    <audio loop id="bgAudio">
+        <source src="{% static 'music/Variant.mp3' %}" type="audio/mpeg">
+        <source src="{% static 'music/Variant.ogg' %}">
+    </audio>
     <!-- CSRF и URL для AJAX -->
     <div id="csrf-token" data-csrf="{{ csrf_token }}" style="display: none;"></div>
     <div id="update-username-url" data-url="{% url 'update_username' %}" style="display: none;"></div>
@@ -95,10 +99,6 @@
                         <span class="info-value" id="email-value">{{ request.user.email }}</span>
                         <input type="email" id="email-input" style="display: none;" class="form-control narrow-input">
                     </div>
-                    <div class="info-row">
-                        <span class="info-label">Уровень:</span>
-                        <span class="info-value">10</span>
-                    </div>
                     <div class="change-email-container">
                         <span class="change-email" onclick="toggleUsernameEdit()">Изменить ник</span>
                         {% if not is_social_user %}
@@ -107,56 +107,7 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>Мои достижения</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="achievements-grid">
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Первая победа', event)"></div>
-                            <span>Первая победа</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Исследователь', event)"></div>
-                            <span>Исследователь</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Ветеран', event)"></div>
-                            <span>Ветеран</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Коллекционер', event)"></div>
-                            <span>Коллекционер</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Стратег', event)"></div>
-                            <span>Стратег</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Легенда', event)"></div>
-                            <span>Легенда</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Новатор', event)"></div>
-                            <span>Новатор</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Мастер', event)"></div>
-                            <span>Мастер</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Герой', event)"></div>
-                            <span>Герой</span>
-                        </div>
-                        <div class="achievement-container">
-                            <div class="achievement" onclick="openModal('Чемпион', event)"></div>
-                            <span>Чемпион</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 

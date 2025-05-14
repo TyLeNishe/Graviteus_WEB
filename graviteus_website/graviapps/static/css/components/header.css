@@ -26,6 +26,45 @@
 /* Центральный элемент (для username) */
 .header-center {
   position: relative;
+  left: 0%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+/* Подвал */
+.site-footer {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--light-gray);
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  .header-nav {
+    gap: 8px;
+  }
+
+  .header-center {
+    font-size: 16px;
+    max-width: 140px;
+  }
+
+  .site-footer {
+    padding: var(--space-md);
+  }
+}
   transform: translateX(-50%);
   font-size: 18px;
   font-weight: bold;
