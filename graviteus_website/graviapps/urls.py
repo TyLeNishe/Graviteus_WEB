@@ -21,6 +21,7 @@ urlpatterns = [
     path('social-auth/', include('social_django.urls', namespace='social')), 
     path('shop/', views.shop, name='shop'),
     path('about/', views.about, name='about'),
+    path('lor/', views.lor, name='lor'),
 ]
 
 if settings.DEBUG:

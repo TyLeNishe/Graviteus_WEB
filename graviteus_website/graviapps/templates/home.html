@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <audio loop id="bgAudio">
+        <source src="{% static 'music/Variant.mp3' %}" type="audio/mpeg">
+        <source src="{% static 'music/Variant.ogg' %}">
+    </audio>
     <header class="header">
         <nav class="header-nav">
             {% if not user.is_authenticated %}
@@ -27,6 +31,7 @@
             <a href="{% url 'login' %}" class="btn btn-outline btn-sm">Войти</a>
             {% else %}
             <a href="{% url 'shop' %}" class="btn btn-outline btn-sm">Магазин</a>
+            <a href="{% url 'lor' %}" class="btn btn-outline btn-sm">Лор</a>
             <form action="{% url 'logout' %}" method="post" style="display: inline;">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline btn-sm">Выйти</button>
@@ -42,6 +47,7 @@
             </a>
             {% endif %}
             <a href="{% url 'about' %}" class="btn btn-outline btn-sm">О нас</a>
+            <button id="musicToggle" class="btn btn-outline btn-sm">Включить музыку</button>
         </div>
     </header>
 
@@ -126,6 +132,7 @@
     <script src="{% static 'js/script.js' %}" defer></script>
     <script src="{% static 'js/fun/print.js' %}"></script>
     <script src="{% static 'js/fun/jora.js' %}"></script>
+    <script src="{% static 'js/fun/music.js' %}"></script>
 </body>
 
 </html>

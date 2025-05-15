@@ -14,3 +14,10 @@
     background-position: center;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .jora {
+    width: 28px;
+    height: 14px;
+  }
+}

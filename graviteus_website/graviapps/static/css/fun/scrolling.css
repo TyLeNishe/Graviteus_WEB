@@ -14,3 +14,30 @@
 
 }
 
+@media (max-width: 900px) {
+    .content-image:not(.slider) {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    .content-image.visible .image-pair:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    .content-image.visible .image-pair:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .content-image.visible .image-pair:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+
+    .content-image.visible .image-pair:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+
+    .image-pair.visible:not(.slider) .content-image:not(.slider) {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

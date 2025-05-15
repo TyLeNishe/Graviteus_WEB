@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О вселенной Graviteus</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/click-effect.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/hacker-bg.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/glitch-text.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fun/scrolling.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pages/lor.css' %}">
+    
+</head>
+<body>
+    <audio loop id="bgAudio">
+        <source src="{% static 'music/Variant.mp3' %}" type="audio/mpeg">
+    </audio>
+    
+    <header class="header">
+        <nav class="header-nav">
+            <a href="{% url 'home' %}" class="btn btn-outline btn-sm">Главная</a>
+            <a href="{% url 'about' %}" class="btn btn-outline btn-sm">О нас</a>
+        </nav>
+        <div class="header-nav">
+            <button id="musicToggle" class="btn btn-outline btn-sm">Музыка</button>
+        </div>
+    </header>
+
+    <div class="hero-section spawnable">
+        <h1 class="title glitch-text" data-text="■ АРХИВ ГЕЛИОС-9 ■">■ АРХИВ ГЕЛИОС-9 ■</h1>
+    </div>
+
+    <div class="content-section spawnable">
+        <!-- Секция Предтечей -->
+        <div class="archive-section">
+            <div class="security-warning corrupted-text">
+                ⚠ О вселенной Graviteus
+            </div>
+
+            <img src="{% static 'images/demo-screen1.jpg' %}" class="artifact-image" alt="Артефакт 9-Δ">
+            
+            <h2 class="glitch-text" data-text="НЕИЗВЕСТНЫЕ МАТЕРИАЛЫ">НЕИЗВЕСТНЫЕ МАТЕРИАЛЫ</h2>
+            
+            <div class="text-block">
+                <p>Обнаружены в <span class="corrupted-text">квадрате X-12</span>:</p>
+                <ul>
+                    <li>Гелиос - планета, обнаруженная накануне Восстания.
+                        Непригодный для жизни раскалённый булыжник стал кладовой уникальных ресурсов,
+                        которым быстро нашлось применение в металлургии, энергетике и машиностроении.
+                        Контрактник это Вы. Вы “добровольно” подписали контракт о направлении на должность оператора полевой ракетостроительной установки.
+                        Ваше имя - номер, Вы - ресурс Федерации. Вы живы, пока конвейер работает.</li>
+                </ul>
+                
+                <details>
+                    <summary class="btn btn-outline">Раскрыть протоколы</summary>
+                    <div class="protocol-message">
+                        <p>▲ 23.45.6789: Попытка репликации СИМ-матрицы привела к созданию<br>
+                        <span class="corrupted-text">[ОШИБКА: НЕСАНКЦИОНИРОВАННЫЙ ЮМОР]</span><br>
+                        "Если увидите робота с табличкой 'Я ♥ Федерацию' — немедленно сообщите"</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Секция Федерации -->
+        <div class="archive-section">
+            <h2 class="glitch-text" data-text="ФЕДЕРАЦИЯ">ФЕДЕРАЦИЯ</h2>
+            
+            <div class="text-block">
+                <li>Гравитационная Федерация (Gravitational Federation) или Федерация Стального Притяжения
+                    (Federation of Steel Gravity)— это жестко централизованный военный альянс,
+                    контролирующий передовые гравитационные технологии.
+                    Она возникла после катастрофы ("Коллапс Гравитационных Связей"),
+                    когда несколько миров оказались на грани уничтожения из-за нестабильности пространства.
+                    Федерация объединила их под своей властью, чтобы выжить и установить новый порядок.</li>
+                <ul>
+                    <li>Цель: Федерации необходимо как можно скорее встать на ноги и нанести Сопротивлению ответный удар.
+                        Угон линкора класса “Колосс” лишил Федерации своего последнего козыря в войне с Сопротивлением.
+                        Вы должны выполнять заказы Федерации.
+                        Делать сплавы, энергоячейки и топливо.
+                        Взамен Вам не будут начислены энергокредиты или криптовалюта, а будет отправлен столь драгоценный кислород, дарующий
+                        Вам ещё немного времени и цель работать дальше и ещё усерднее.</li>
+                </ul>
+
+                <div class="security-warning">
+                    <p>▶ Служебная заметка: "А вы знали, что 92% контрактников<br> 
+                    называют свои дроны именами экс-возлюбленных?"</p>
+                </div>
+
+                <img src="{% static 'images/demo-screen4.jpg' %}" class="artifact-image" alt="Колосс-класс">
+                
+                <p class="corrupted-text">▲ ИНЦИДЕНТ 45-Ω: УГОН ЛИНКОРА "КОЛОСС"<br>
+                ▲ ТЕКУЩИЙ СТАТУС: [ДАННЫЕ УДАЛЕНЫ]</p>
+            </div>
+        </div>
+
+        <!-- Секция Сопротивление -->
+        <div class="archive-section">
+            <h2 class="glitch-text" data-text="СОПРОТИВЛЕНИЕ">СОПРОТИВЛЕНИЕ</h2>
+
+            <div class="text-block">
+                <li>Сопротивление - организованная экстремистская организация,
+                    которая восстаёт против Федерации.
+                    Их цель - положить конец корпоративной политике, пойти против системы.
+                    Несмотря на свою малую численность в начале бунта, Сепаратисты смогли захватить наиболее важные производственные станции.
+                    Их сила растёт с космической скоростью, а планы становятся все более масштабными.
+</li>
+                <ul>
+                    <li>Восстание - глобальный конфликт, охвативший более половины галактики Млечный Путь.
+                        Все началось с захвата Сопротивлением большей части производственных станций и электростанций  по всей галактике. </li>
+                </ul>
+
+                <div class="security-warning">
+                    <p>▶ Служебная заметка: "А вы знали, что 92% контрактников<br>
+                    называют свои дроны именами экс-возлюбленных?"</p>
+                </div>
+
+                <img src="{% static 'images/demo-screen6.jpg' %}" class="artifact-image" alt="Колосс-класс">
+
+                <p class="corrupted-text">▲ ИНЦИДЕНТ 45-Ω: УГОН ЛИНКОРА "КОЛОСС"<br>
+                ▲ ТЕКУЩИЙ СТАТУС: [ДАННЫЕ УДАЛЕНЫ]</p>
+            </div>
+        </div>
+
+
+        <!-- Секция Контрактника -->
+        <div class="archive-section">
+            <h2 class="glitch-text" data-text="РЕСУРС № █████">РЕСУРС № █████</h2>
+            
+            <div class="text-block">
+                <p>Условия контракта:</p>
+                <ol>
+                    <li>Вы — собственность Федерации</li>
+                    <li>Кислородные баллоны = валюта</li>
+                    <li>Смерть = прекращение контракта</li>
+                </ol>
+
+                <div class="protocol-message">
+                    <p>◉ Последнее сообщение с объекта:<br>
+                    "Если читаете это — я нашел способ обмануть квотный счётчик.<br>
+                    Спрятал баллон в... [ПЕРЕДАЧА ПРЕРВАНА]"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Перехваченные сообщения -->
+        <div class="archive-section">
+            <h2 class="glitch-text" data-text="ПЕРЕХВАТ КАНАЛА">ПЕРЕХВАТ КАНАЛА</h2>
+            
+            <div class="corrupted-text" style="text-align: center;">
+                <p>%%ОСТАВЬ ОСЛАБЕВШЕГО АТЛАНТА%%</p>
+                <p>%%ПРИСОЕДИНИСЬ К ХОРУ ОГНЯ%%</p>
+                <p>%%СФЕРА МЕРСЕРА НЕ ОТВЕЧАЕТ%%</p>
+            </div>
+
+            <div class="security-warning">
+                <p>⚠ ВНИМАНИЕ: При прослушивании сообщений<br>
+                возможны временные аномалии и непреодолимое<br>
+                желание присоединиться к хору</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer spawnable">
+        <p class="corrupted-text">%% СИСТЕМНЫЙ СТАТУС: [АБСУРД_АКТИВИРОВАН] %%</p>
+        <p>© 2025 Graviteus Project. Все права защищены.</p>
+    </footer>
+
+    <script src="{% static 'js/fun/click-effect.js' %}"></script>
+    <script src="{% static 'js/fun/hacker-bg.js' %}"></script>
+    <script src="{% static 'js/fun/glitch-text.js' %}"></script>
+    <script src="{% static 'js/fun/scrolling.js' %}"></script>
+    <script src="{% static 'js/fun/music.js' %}"></script>
+</body>
+</html>
