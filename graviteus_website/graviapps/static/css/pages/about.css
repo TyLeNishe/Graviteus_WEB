@@ -1,0 +1,100 @@
+body {
+   background-color: rgb(35,40,62);
+    transition: background-color 0.3s;
+    min-height: 100vh;
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 80px 20%;
+    line-height: 1.6;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: var(--light);
+}
+
+p {
+    font-size: 20px;
+    color: var(--light);
+}
+
+.team-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.team-member.reverse {
+    flex-direction: row-reverse;
+}
+
+.member-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.member-info {
+    flex: 1;
+    text-align: left;
+}
+
+.member-info h2 {
+    margin-top: 0;
+    color: var(--light);
+}
+
+.member-info p {
+    color: var(--light);
+}
+
+.projects-section {
+    margin-top: 60px;
+    text-align: left;
+}
+
+.projects-section h2 {
+    text-align: center;
+    color: var(--light);
+    margin-top: 0;
+}
+
+.project {
+    margin-bottom: 40px;
+}
+
+.project h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--light);
+}
+
+.project p, .project ul {
+    color: var(--light);
+}
+
+.project ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project ul li::before {
+    content: "";
+    color: var(--light);
+    margin-right: 5px;
+}
+
+ 

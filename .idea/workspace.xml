@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61a01936-7d18-45b9-b881-0fa4bf95c571" name="Changes" comment="улучшили лор">
+      <change afterPath="$PROJECT_DIR$/graviteus_website/graviapps/static/css/pages/about.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/images/Aleksandr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/static/images/Alexey.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graviteus_website/graviapps/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/graviteus_website/graviapps/templates/home.html" afterDir="false" />
     </list>
