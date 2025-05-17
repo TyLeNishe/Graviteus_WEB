@@ -140,6 +140,7 @@ def delete_account(request):
         logout(request)
         logger.info("User %s deleted their account.", user.username)
         return redirect('home')
+    return redirect('profile')
 
 
 def register(request):
