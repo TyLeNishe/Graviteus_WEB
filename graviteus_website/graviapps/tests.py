@@ -1,10 +1,8 @@
-from django.test import TestCase
 from django.contrib.auth.models import User
-from graviapps.models import UserProfile
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase, Client
-from django.contrib.auth.models import User
 from django.urls import reverse
+from graviapps.models import UserProfile
 
 
 class UserProfileTests(TestCase):
@@ -25,7 +23,8 @@ class UserProfileTests(TestCase):
         self.assertEqual(str(profile), 'jora')
 
     def test_user_profile_custom_avatar(self):
-        image = SimpleUploadedFile(name='test_image.jpg', content=b'fake image content', content_type='image/jpeg')
+        image = SimpleUploadedFile(name='test_image.jpg',
+                                   content=b'fake image content', content_type='image/jpeg')
         profile = UserProfile.objects.create(user=self.user, avatar=image)
         self.assertTrue(profile.avatar.name.endswith('test_image.jpg'))
 
